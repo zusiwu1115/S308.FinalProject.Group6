@@ -1,6 +1,4 @@
-﻿//S308_Group 6: Jennie Chen, Guanzhou Wang, Joe Wu
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +15,11 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
-    /// Interaction logic for MainMenu.xaml
+    /// Interaction logic for PricingManagement.xaml
     /// </summary>
-    public partial class MainMenu : Window
+    public partial class PricingManagement : Window
     {
-        public MainMenu()
+        public PricingManagement()
         {
             InitializeComponent();
         }
