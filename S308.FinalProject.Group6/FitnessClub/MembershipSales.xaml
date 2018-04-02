@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="Membership Sales" Height="400" Width="500">
     <Grid>
-        
+        <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Logo.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
     </Grid>
 </Window>
