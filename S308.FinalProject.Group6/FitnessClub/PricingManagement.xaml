@@ -5,12 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Pricing Management" Height="300" Width="300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="155*"/>
-            <ColumnDefinition Width="137*"/>
-        </Grid.ColumnDefinitions>
-
-    </Grid>
+        Title="Pricing Management" Height="400" Width="500">
+    <Grid/>
 </Window>
