@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Main Menu" Height="400" Width="500">
-    <Grid>
-        <Rectangle x:Name="recBackgroundImg" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="492" Margin="0,45,0,0">
+    <Grid Background="#FF9B0E2A">
+        <Rectangle x:Name="recBackgroundImg" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="492" Margin="0,41,0,0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Background Pic.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="recWhiteSpace" HorizontalAlignment="Left" Height="40" Margin="0,0,-8,0" VerticalAlignment="Top" Width="492" Fill="White"/>
         <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Logo.png"/>

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Pricing Management" Height="400" Width="500">
-    <Grid>
+    <Grid Background="#FF9B0E2A">
+        <Rectangle x:Name="recWhiteSpace" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="492" Fill="White"/>
         <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Logo.png"/>
