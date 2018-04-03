@@ -24,6 +24,6 @@ namespace FitnessClub
             InitializeComponent();
         }
 
-       
+        
     }
 }
