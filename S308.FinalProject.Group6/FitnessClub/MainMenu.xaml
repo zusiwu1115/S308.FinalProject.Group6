@@ -18,5 +18,10 @@
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="recHoosierFitnessClub" HorizontalAlignment="Left" Height="40" Margin="80,0,0,0" VerticalAlignment="Top" Width="200">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="HooiserFitnessClub.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Window>
