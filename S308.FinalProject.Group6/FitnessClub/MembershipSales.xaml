@@ -14,7 +14,7 @@
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7"/>
         <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="425,176,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="5"/>
         <Button x:Name="btStartApplication" Content="Start Application" HorizontalAlignment="Left" Margin="376,325,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="6"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="363,176,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="4"/>
@@ -34,6 +34,7 @@
         <CheckBox x:Name="chbPersonalTrainingPlan" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="139,146,0,0" VerticalAlignment="Top" Width="140" Background="#FFEECD86" Foreground="White" TabIndex="2"/>
         <CheckBox x:Name="chbLockerRental" Content="Locker Rental" HorizontalAlignment="Left" Margin="139,166,0,0" VerticalAlignment="Top" Width="140" Background="#FFEECD86" Foreground="White" TabIndex="3"/>
         <TextBox x:Name="txtQuoteDisplay" HorizontalAlignment="Left" Height="149" Margin="14,204,0,0" TextWrapping="Wrap" Text="Membership Type: Individual 1 Month &#xD;&#xA;Start Date: 04/02/2018 &#xD;&#xA;End Date: 05/02/2018 &#xD;&#xA;Membership Cost per Month: $9.99 &#xD;&#xA;Subtotal: $9.99 &#xD;&#xA;Additional Feature: Locker Rental &#xD;&#xA;&#xD;&#xA;Total: $10.99" VerticalAlignment="Top" Width="329" Background="#FFEECD86" Foreground="#FF3D3242" TextChanged="txtQuoteDisplay_TextChanged" FontFamily="Courier New" FontSize="10.667"/>
+        <Label x:Name="lblMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
 
     </Grid>
 </Window>

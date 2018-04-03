@@ -6,12 +6,57 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Membership Signup" Height="400" Width="500">
-    <Grid Background="#FF9B0E2A">
+    <Grid Background="#FF9B0E2A" Margin="0,-5,0,5">
         <Rectangle x:Name="recWhiteSpace" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="492" Fill="White"/>
         <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="15"/>
+        <Button x:Name="btnSingUp" Content="Sing Up" HorizontalAlignment="Left" Margin="425,339,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="13"/>
+        <Button x:Name="btnQuotation" Content="Return to Quotation" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="118" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="14"/>
+        <Label x:Name="lblNewMemberInfo" Content="New Member Information" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
+        <Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Margin="94,275,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblGender" Content="Gender" HorizontalAlignment="Left" Margin="76,244,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="87,214,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblPhone" Content="Phone" HorizontalAlignment="Left" Margin="81,183,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblCreditCardNumber" Content="Credit Card Number" HorizontalAlignment="Left" Margin="8,151,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblCreditCardType" Content="Credit Card Type" HorizontalAlignment="Left" Margin="26,117,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="59,87,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="58,56,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Margin="76,305,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblPersonalFitnessGoal" Content="Personal Fitness Goal" HorizontalAlignment="Left" Margin="280,49,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14.667"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="139,54,0,0" TextWrapping="Wrap" Text="Max" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="0"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="139,87,0,0" TextWrapping="Wrap" Text="Sample" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="1"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="139,151,0,0" TextWrapping="Wrap" Text="5964-8530-7894-2205" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="3"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="139,183,0,0" TextWrapping="Wrap" Text="(812) 000-0000" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="4"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="139,214,0,0" TextWrapping="Wrap" Text="sample@iu.edu" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="5"/>
+        <ComboBox x:Name="cobCreditCardType" HorizontalAlignment="Left" Margin="139,119,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="2">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="Visa"/>
+            <ComboBoxItem Content="Mastercard" Visibility="Hidden"/>
+            <ComboBoxItem Content="American Express"/>
+            <ComboBoxItem Content="Discover"/>
+        </ComboBox>
+        <ComboBox x:Name="cobGender" HorizontalAlignment="Left" Margin="139,244,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="6">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="Not Provided"/>
+        </ComboBox>
+        <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="139,305,0,0" TextWrapping="Wrap" Text="190" VerticalAlignment="Top" Width="92" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="8"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="139,274,0,0" TextWrapping="Wrap" Text="26" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="7"/>
+        <Label x:Name="lblUnit" Content="lbs" HorizontalAlignment="Left" Margin="236,305,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblAthleticPerformance" Content="Athletic Performance" HorizontalAlignment="Left" Margin="280,79,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Slider x:Name="sliAthleticPerformance" HorizontalAlignment="Left" Margin="284,110,0,0" VerticalAlignment="Top" Width="132" SmallChange="1" Maximum="5" Cursor="None" TabIndex="9"/>
+        <Label x:Name="lblOverallHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="280,128,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Slider x:Name="sliOverallHealth" HorizontalAlignment="Left" Margin="284,159,0,0" VerticalAlignment="Top" Width="132" SmallChange="1" Maximum="5" Cursor="None" TabIndex="10"/>
+        <Label x:Name="lblStrengthTrainingWeightLoss" Content="Strength Training Weight Loss" HorizontalAlignment="Left" Margin="280,183,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Slider x:Name="sliWeightLoss" HorizontalAlignment="Left" Margin="284,214,0,0" VerticalAlignment="Top" Width="132" SmallChange="5" Maximum="100" Cursor="None" TickFrequency="5" TabIndex="11"/>
+        <Label x:Name="lblWeightManagement" Content="Weight Management" HorizontalAlignment="Left" Margin="280,243,0,0" VerticalAlignment="Top" Foreground="White" Focusable="True"/>
+        <Slider x:Name="sliWeightManagement" HorizontalAlignment="Left" Margin="284,275,0,0" VerticalAlignment="Top" Width="132" SmallChange="5" Maximum="300" Cursor="None" TickFrequency="10" Minimum="90" TabIndex="12"/>
+        <Label x:Name="lblUnit3" Content="lbs" HorizontalAlignment="Left" Margin="421,267,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblUnit2" Content="lbs" HorizontalAlignment="Left" Margin="416,209,0,0" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </Window>
