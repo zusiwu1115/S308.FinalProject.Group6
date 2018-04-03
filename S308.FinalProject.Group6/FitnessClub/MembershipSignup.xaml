@@ -32,14 +32,14 @@
         <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="139,151,0,0" TextWrapping="Wrap" Text="5964-8530-7894-2205" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="3"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="139,183,0,0" TextWrapping="Wrap" Text="(812) 000-0000" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="4"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="139,214,0,0" TextWrapping="Wrap" Text="sample@iu.edu" VerticalAlignment="Top" Width="120" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="5"/>
-        <ComboBox x:Name="cobCreditCardType" HorizontalAlignment="Left" Margin="139,119,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="2">
+        <ComboBox x:Name="cobCreditCardType" HorizontalAlignment="Left" Margin="139,119,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" TabIndex="2" SelectedIndex="1">
             <ComboBoxItem/>
             <ComboBoxItem Content="Visa"/>
             <ComboBoxItem Content="Mastercard" Visibility="Hidden"/>
             <ComboBoxItem Content="American Express"/>
             <ComboBoxItem Content="Discover"/>
         </ComboBox>
-        <ComboBox x:Name="cobGender" HorizontalAlignment="Left" Margin="139,244,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="6">
+        <ComboBox x:Name="cobGender" HorizontalAlignment="Left" Margin="139,244,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="6">
             <ComboBoxItem/>
             <ComboBoxItem Content="Male"/>
             <ComboBoxItem Content="Female"/>
