@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Main Menu" Height="400" Width="500">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
         <Rectangle HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="492">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Background Pic.jpg"/>
