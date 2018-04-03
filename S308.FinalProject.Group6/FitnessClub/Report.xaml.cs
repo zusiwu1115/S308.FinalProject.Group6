@@ -1,11 +1,4 @@
-﻿//S308_Group 6: Jennie Chen, Guanzhou Wang, Joe Wu
-
-
-//Image Source
-//Logo: https://www.pinterest.com/pin/466826317610586354
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,14 +15,13 @@ using System.Windows.Shapes;
 namespace FitnessClub
 {
     /// <summary>
-    /// Interaction logic for MainMenu.xaml
+    /// Interaction logic for Report.xaml
     /// </summary>
-    public partial class MainMenu : Window
+    public partial class Report : Window
     {
-        public MainMenu()
+        public Report()
         {
             InitializeComponent();
         }
-
-
+    }
 }

@@ -5,12 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Pricing Management" Height="300" Width="300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="155*"/>
-            <ColumnDefinition Width="137*"/>
-        </Grid.ColumnDefinitions>
-
+        Title="Pricing Management" Height="400" Width="500">
+    <Grid Background="#FF9B0E2A">
+        <Rectangle x:Name="recWhiteSpace" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="492" Fill="White"/>
+        <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Logo.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7"/>
+        <Label x:Name="lblPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
+        <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+        <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,59,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="0" Height="28" IsReadOnly="True" IsTabStop="False">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="Individual 1 Month"/>
+            <ComboBoxItem Content="Individual 12 Month"/>
+            <ComboBoxItem Content="Two Person 1 Month"/>
+            <ComboBoxItem Content="Two Person 12 Month"/>
+            <ComboBoxItem Content="Family 1 Month"/>
+            <ComboBoxItem Content="Family 12 Month"/>
+        </ComboBox>
+        <Label x:Name="lblCurrentPrice" Content="Current Price" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Width="97"/>
+        <TextBox x:Name="txtCurrentPrice" HorizontalAlignment="Left" Height="28" Margin="139,110,0,0" TextWrapping="Wrap" Text="$9.99" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsReadOnly="True" IsTabStop="False"/>
+        <Label x:Name="lblCurrentAvailability" Content="Current Avaiability?" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+        <TextBox x:Name="txtCurrentAvailabity" HorizontalAlignment="Right" Height="28" Margin="0,150,194,0" TextWrapping="Wrap" Text="Yes" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsReadOnly="True" IsTabStop="False"/>
+        <Label x:Name="lblPrice" Content="Price" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+        <TextBox x:Name="txtCurrentPrice_Copy" HorizontalAlignment="Left" Height="28" Margin="139,218,0,0" TextWrapping="Wrap" Text="$9.99" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsTabStop="False"/>
+        <Label x:Name="lblAvaiability" Content="Avaiability&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+        <CheckBox x:Name="chkAvaiability" Content="(Check if Avaiable)" HorizontalAlignment="Left" Margin="139,266,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Background="White" Foreground="#FFEECD86"/>
+        <Button x:Name="btnSave" Content="Save Changes" HorizontalAlignment="Left" Margin="376,318,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="6"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="0,198,0,0" VerticalAlignment="Top" Width="492">
+            <Label x:Name="label" Content="Make Changes"/>
+        </Border>
     </Grid>
 </Window>

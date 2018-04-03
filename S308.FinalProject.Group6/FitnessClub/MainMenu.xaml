@@ -7,14 +7,24 @@
         mc:Ignorable="d"
         Title="Main Menu" Height="400" Width="500">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="0*"/>
-        </Grid.RowDefinitions>
         <Rectangle HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="492">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Background Pic.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="recWhiteSpace" HorizontalAlignment="Left" Height="40" Margin="0,0,-8,0" VerticalAlignment="Top" Width="492" Fill="White"/>
+        <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Logo.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="recHoosierFitnessClub" HorizontalAlignment="Left" Height="40" Margin="80,0,0,0" VerticalAlignment="Top" Width="200">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="HooiserFitnessClub.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="button" Content="Membership Sales" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Width="165" Height="169"/>
+        <Button x:Name="button_Copy" Content="Member Information" HorizontalAlignment="Left" Margin="326,200,0,0" VerticalAlignment="Top" Width="165" Height="169"/>
+        <Button x:Name="button_Copy1" Content="Pricing Management" HorizontalAlignment="Left" Margin="164,200,0,0" VerticalAlignment="Top" Width="165" Height="169"/>
     </Grid>
 </Window>
