@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="DisplayReport" Height="300" Width="300">
-    <Grid>
-        
+        Title="DisplayReport" Height="400" Width="500">
+    <Grid Background="#FF9B0E2A">
+        <Rectangle x:Name="recWhiteSpace" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="492" Fill="White"/>
+
+        <Rectangle x:Name="recLogoImg" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="80">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Logo.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label x:Name="lblMemberReport" Content="Member Report" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="15"/>
+        <Button x:Name="btnNewSearch" Content="New Search" HorizontalAlignment="Left" Margin="312,10,0,0" VerticalAlignment="Top" Width="90" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="14"/>
+        <Label x:Name="lblTitle" Content="Detailed Information" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Margin="246,108,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="31"/>
+        <Label x:Name="lblGender" Content="Gender" HorizontalAlignment="Left" Margin="245,76,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="49"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="14,333,0,0" VerticalAlignment="Top" Foreground="White" Height="26" Width="38"/>
+        <Label x:Name="lblPhone" Content="Phone" HorizontalAlignment="Left" Margin="12,311,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="44"/>
+        <Label x:Name="lblExpirationDate" Content="Expiration Date" HorizontalAlignment="Left" Margin="12,289,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="92"/>
+        <Label x:Name="lblMembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="14,267,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="106"/>
+        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="15,244,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="66"/>
+        <Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="14,224,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="67"/>
+        <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Margin="245,139,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="48"/>
+        <Label x:Name="lblAthleticPerformance" Content="Athletic Performance" HorizontalAlignment="Left" Margin="244,199,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="152"/>
+        <Label x:Name="lblOverallHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="244,227,0,0" VerticalAlignment="Top" Foreground="White" Height="29" Width="131"/>
+        <Label x:Name="lblStrengthTrainingWeightLoss" Content="Strength Training Weight Loss" HorizontalAlignment="Left" Margin="244,256,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="197"/>
+        <Label x:Name="lblWeightManagement" Content="Weight Management" HorizontalAlignment="Left" Margin="244,283,0,0" VerticalAlignment="Top" Foreground="White" Focusable="True" Height="28" Width="98"/>
+        <Label x:Name="lblUnit3" Content="lbs" HorizontalAlignment="Left" Margin="456,276,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="20"/>
+        <Label x:Name="lblUnit2" Content="lbs" HorizontalAlignment="Left" Margin="456,252,0,0" VerticalAlignment="Top" Foreground="White" Height="29" Width="20"/>
+        <Label x:Name="lblAgeResult" Content="46" HorizontalAlignment="Left" Margin="428,111,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="31"/>
+        <Label x:Name="lblGenderResult" Content="Male" HorizontalAlignment="Left" Margin="428,76,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="49"/>
+        <Label x:Name="lblEmailResult" Content="sjohnson@gmail.com" HorizontalAlignment="Left" Margin="128,333,0,0" VerticalAlignment="Top" Foreground="White" Height="26" Width="123"/>
+        <Label x:Name="lblPhoneResult" Content="(812) 361-7783" HorizontalAlignment="Left" Margin="126,310,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="100"/>
+        <Label x:Name="lblExpirationDateResult" Content="2018.4.1" HorizontalAlignment="Left" Margin="126,290,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="92"/>
+        <Label x:Name="lblMembershipTypeResult" Content="Family 1 Month" HorizontalAlignment="Left" Margin="126,268,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="106"/>
+        <Label x:Name="lblLastNameResult" Content="Johnson" HorizontalAlignment="Left" Margin="126,245,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="66"/>
+        <Label x:Name="lblFirstNameResult" Content="Sample" HorizontalAlignment="Left" Margin="126,225,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="67"/>
+        <Label x:Name="lblWeightResult" Content="165" HorizontalAlignment="Left" Margin="428,139,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="48"/>
+        <Label x:Name="lblMembershipType1" Content="Membership Type" HorizontalAlignment="Left" Margin="14,75,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblMembershipTypeResult1" Content="Family 1 Month" HorizontalAlignment="Left" Margin="128,76,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="14,97,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblStartDateResult" Content="2018.3.1" HorizontalAlignment="Left" Margin="128,100,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblEndDate" Content="End Date" HorizontalAlignment="Left" Margin="14,119,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblEndDateResult" Content="2018.4.1" HorizontalAlignment="Left" Margin="128,121,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblMembershipCost" Content="Membership Cost" HorizontalAlignment="Left" Margin="13,139,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblMembershipCostResult" Content="$19.99" HorizontalAlignment="Left" Margin="128,141,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblSubtotal" Content="Subtotal" HorizontalAlignment="Left" Margin="14,161,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblSubtotalResult" Content="$19.99" HorizontalAlignment="Left" Margin="128,161,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblAdditionalFeatures" Content="Additional Features" HorizontalAlignment="Left" Margin="14,182,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblAdditionalFeaturesResult" Content="None" HorizontalAlignment="Left" Margin="128,184,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblTotal" Content="Total" HorizontalAlignment="Left" Margin="14,203,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
+        <Label x:Name="lblTotalResult" Content="$19.99" HorizontalAlignment="Left" Margin="128,204,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98"/>
+        <Label x:Name="lblWeightLoss" Content="30" HorizontalAlignment="Left" Margin="428,255,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblWeightLoss_Copy" Content="195" HorizontalAlignment="Left" Margin="428,278,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.435,2.038"/>
+        <Label x:Name="lblPerformanceResult" Content="None" HorizontalAlignment="Left" Margin="427,202,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="49" RenderTransformOrigin="0.388,3.393"/>
+        <Label x:Name="lblHealth" Content="Healthy" HorizontalAlignment="Left" Margin="427,228,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="55" RenderTransformOrigin="0.388,3.393"/>
+        <GroupBox x:Name="grpFitnessGoal" Header="Fitness Goal" HorizontalAlignment="Left" Margin="244,177,0,0" VerticalAlignment="Top" Foreground="White" Height="151" Width="238"/>
+
     </Grid>
 </Window>
