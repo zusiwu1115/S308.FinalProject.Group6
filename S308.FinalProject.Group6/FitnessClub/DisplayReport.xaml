@@ -22,8 +22,7 @@
         <Label x:Name="lblGender" Content="Gender" HorizontalAlignment="Left" Margin="247,136,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="49"/>
         <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="246,108,0,0" VerticalAlignment="Top" Foreground="White" Height="26" Width="38"/>
         <Label x:Name="lblPhone" Content="Phone" HorizontalAlignment="Left" Margin="244,77,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="44"/>
-        <Label x:Name="lblExpirationDate" Content="Expiration Date" HorizontalAlignment="Left" Margin="246,48,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="92"/>
-        <Label x:Name="lblMembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="16,337,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="106"/>
+        <Label x:Name="lblExpirationDate" Content="Expiration Date" HorizontalAlignment="Left" Margin="14,136,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="92"/>
         <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="15,310,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="66"/>
         <Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="14,282,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="67"/>
         <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Margin="247,192,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="48"/>
@@ -37,8 +36,7 @@
         <Label x:Name="lblGenderResult" Content="Male" HorizontalAlignment="Left" Margin="359,131,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="49" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblEmailResult" Content="sjohnson@gmail.com" HorizontalAlignment="Left" Margin="359,105,0,0" VerticalAlignment="Top" Foreground="White" Height="26" Width="123" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblPhoneResult" Content="(812) 361-7783" HorizontalAlignment="Left" Margin="359,76,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="100" BorderBrush="White" BorderThickness="0,0,0,1"/>
-        <Label x:Name="lblExpirationDateResult" Content="2018.4.1" HorizontalAlignment="Left" Margin="358,48,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="92" BorderThickness="0,0,0,1" BorderBrush="White"/>
-        <Label x:Name="lblMembershipTypeResult" Content="Family 1 Month" HorizontalAlignment="Left" Margin="135,338,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="106" BorderBrush="White" BorderThickness="0,0,0,1"/>
+        <Label x:Name="lblExpirationDateResult" Content="2018.4.1" HorizontalAlignment="Left" Margin="126,136,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="92" BorderThickness="0,0,0,1" BorderBrush="White"/>
         <Label x:Name="lblLastNameResult" Content="Johnson" HorizontalAlignment="Left" Margin="133,311,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="66" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblFirstNameResult" Content="Sample" HorizontalAlignment="Left" Margin="133,283,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="67" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblWeightResult" Content="165" HorizontalAlignment="Left" Margin="359,187,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="48" BorderBrush="White" BorderThickness="0,0,0,1"/>
@@ -46,8 +44,6 @@
         <Label x:Name="lblMembershipTypeResult1" Content="Family 1 Month" HorizontalAlignment="Left" Margin="135,76,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="14,104,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
         <Label x:Name="lblStartDateResult" Content="2018.3.1" HorizontalAlignment="Left" Margin="135,107,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98" BorderThickness="0,0,0,1" BorderBrush="White"/>
-        <Label x:Name="lblEndDate" Content="End Date" HorizontalAlignment="Left" Margin="14,135,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
-        <Label x:Name="lblEndDateResult" Content="2018.4.1" HorizontalAlignment="Left" Margin="135,137,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98" BorderThickness="0,0,0,1" Background="{x:Null}" BorderBrush="White"/>
         <Label x:Name="lblMembershipCost" Content="Membership Cost" HorizontalAlignment="Left" Margin="13,165,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
         <Label x:Name="lblMembershipCostResult" Content="$19.99" HorizontalAlignment="Left" Margin="135,167,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblSubtotal" Content="Subtotal" HorizontalAlignment="Left" Margin="14,195,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
