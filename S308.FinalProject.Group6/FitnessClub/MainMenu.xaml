@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
         Title="Main Menu" Height="400" Width="500">
-    <Grid>
+    <Grid Background="#FF9B0E2A">
         <Rectangle HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="492">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Background Pic.jpg"/>
@@ -23,8 +23,8 @@
                 <ImageBrush ImageSource="HooiserFitnessClub.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="button" Content="Membership Sales" HorizontalAlignment="Left" Margin="0,200,0,0" VerticalAlignment="Top" Width="165" Height="169"/>
-        <Button x:Name="button_Copy" Content="Member Information" HorizontalAlignment="Left" Margin="326,200,0,0" VerticalAlignment="Top" Width="165" Height="169"/>
-        <Button x:Name="button_Copy1" Content="Pricing Management" HorizontalAlignment="Left" Margin="164,200,0,0" VerticalAlignment="Top" Width="165" Height="169"/>
+        <Button x:Name="button" Content="Membership Sales" HorizontalAlignment="Left" Margin="20,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <Button x:Name="button_Copy" Content="Member Information" HorizontalAlignment="Left" Margin="349,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <Button x:Name="button_Copy1" Content="Pricing Management" HorizontalAlignment="Left" Margin="180,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242"/>
     </Grid>
 </Window>
