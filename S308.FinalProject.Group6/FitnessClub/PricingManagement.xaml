@@ -16,14 +16,16 @@
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7"/>
         <Label x:Name="lblPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
         <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
-        <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,59,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="0" Height="28" IsReadOnly="True" IsTabStop="False">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Individual 1 Month"/>
-            <ComboBoxItem Content="Individual 12 Month"/>
-            <ComboBoxItem Content="Two Person 1 Month"/>
-            <ComboBoxItem Content="Two Person 12 Month"/>
-            <ComboBoxItem Content="Family 1 Month"/>
-            <ComboBoxItem Content="Family 12 Month"/>
+        <ComboBox x:Name="cobMembershipType" Margin="139,59,194,0" VerticalAlignment="Top" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="0" Height="28" IsReadOnly="True" IsTabStop="False">
+            <ComboBoxItem x:Name="cboItem"/>
+            <ComboBoxItem x:Name="cboIndividualOneMonth" Content="Individual 1 Month"/>
+            <ComboBoxItem x:Name="cboIndividualTwelvesMonths" Content="Individual 12 Months"/>
+            <ComboBoxItem x:Name="cboTwoPersonOneMonth" Content="Two Person 1 Month"/>
+            <ComboBoxItem x:Name="cboTwoPersonTwelvesMonths" Content="Two Person 12 Months"/>
+            <ComboBoxItem x:Name="cboFamilyOneMonth" Content="Family 1 Month"/>
+            <ComboBoxItem x:Name="cboFamilyTwelveMonth" Content="Family 12 Months"/>
+            <ComboBoxItem x:Name="cboLockerRental" Content="Locker Rental" HorizontalAlignment="Left" Width="157" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem x:Name="cboPersonalTrainingPlan" Content="Personal Training Plan" HorizontalAlignment="Left" Width="157"/>
         </ComboBox>
         <Label x:Name="lblCurrentPrice" Content="Current Price" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Width="97"/>
         <TextBox x:Name="txtCurrentPrice" HorizontalAlignment="Left" Height="28" Margin="139,128,0,0" TextWrapping="Wrap" Text="$9.99" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsReadOnly="True" IsTabStop="False"/>

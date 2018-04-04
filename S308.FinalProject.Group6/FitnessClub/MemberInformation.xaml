@@ -25,8 +25,8 @@
         <GroupBox x:Name="grpSearch" Header="Member Search" HorizontalAlignment="Left" Margin="9,57,0,0" VerticalAlignment="Top" Height="109" Width="472" Foreground="White" FontSize="18.667"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="422,172,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="13"/>
         <ListBox x:Name="lstMemberList" HorizontalAlignment="Left" Height="128" Margin="10,197,0,0" VerticalAlignment="Top" Width="472" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lstMemberList_SelectionChanged" Background="#FFEECD86" FontFamily="Cordia New" FontSize="16">
-            <ListBoxItem Content="Wilson, sample@iu.edu, 6542541236"/>
-            <ListBoxItem Content="Wilson, samwilsom@gmail.com, 8123617787"/>
+            <ListBoxItem Content="Wilson; sample@iu.edu; 6542541236"/>
+            <ListBoxItem Content="Wilson; samwilsom@gmail.com; 8123617787" Selected="ListBoxItem_Selected"/>
         </ListBox>
         <Button x:Name="btnDisplayReport" Content="Display Report" HorizontalAlignment="Left" Margin="393,333,0,0" VerticalAlignment="Top" Width="88" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="13"/>
 
