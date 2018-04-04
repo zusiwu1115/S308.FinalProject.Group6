@@ -24,9 +24,9 @@
         <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,79,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="0">
             <ComboBoxItem/>
             <ComboBoxItem Content="Individual 1 Month"/>
-            <ComboBoxItem Content="Individual 12 Month"/>
+            <ComboBoxItem Content="Individual 12 Months"/>
             <ComboBoxItem Content="Two Person 1 Month"/>
-            <ComboBoxItem Content="Two Person 12 Month"/>
+            <ComboBoxItem Content="Two Person 12 Months"/>
             <ComboBoxItem Content="Family 1 Month"/>
             <ComboBoxItem Content="Family 12 Month"/>
         </ComboBox>
