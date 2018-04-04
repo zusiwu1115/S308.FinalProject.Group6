@@ -36,5 +36,6 @@
         <Button x:Name="btnSave" Content="Save Changes" HorizontalAlignment="Left" Margin="376,318,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="6"/>
         <Label x:Name="lblAdjustment" Content="Make Pricing and Avaiability Adjustment" HorizontalAlignment="Right" Margin="0,203,135,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Width="248"/>
         <Label x:Name="lblAdjustment_Copy" Content="Current Pricing Information" HorizontalAlignment="Left" Margin="133,93,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Width="177" Height="31"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="389,203,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
