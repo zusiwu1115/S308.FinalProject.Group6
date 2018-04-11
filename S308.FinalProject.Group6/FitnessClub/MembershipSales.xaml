@@ -14,14 +14,12 @@
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7" Click="btnMainMenu_Click"/>
         <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="425,176,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="5"/>
-        <Button x:Name="btStartApplication" Content="Start Application" HorizontalAlignment="Left" Margin="376,325,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="6"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="363,176,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="4"/>
         <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <Label x:Name="lblAdditionalFeatures" Content="Additional Features" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
-        <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,79,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="0">
+        <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,79,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0">
             <ComboBoxItem/>
             <ComboBoxItem Content="Individual 1 Month"/>
             <ComboBoxItem Content="Individual 12 Months"/>
@@ -30,11 +28,17 @@
             <ComboBoxItem Content="Family 1 Month"/>
             <ComboBoxItem Content="Family 12 Month"/>
         </ComboBox>
-        <DatePicker x:Name="dapStartDate" HorizontalAlignment="Left" Margin="139,110,0,0" VerticalAlignment="Top" Width="159" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" IsTabStop="True" TabIndex="1" DisplayDateStart="2018-04-02"/>
-        <CheckBox x:Name="chbPersonalTrainingPlan" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="139,146,0,0" VerticalAlignment="Top" Width="140" Background="#FFEECD86" Foreground="White" TabIndex="2"/>
-        <CheckBox x:Name="chbLockerRental" Content="Locker Rental" HorizontalAlignment="Left" Margin="139,166,0,0" VerticalAlignment="Top" Width="140" Background="#FFEECD86" Foreground="White" TabIndex="3"/>
+        <DatePicker x:Name="datStartDate" HorizontalAlignment="Left" Margin="139,110,0,0" VerticalAlignment="Top" Width="159" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" IsTabStop="True" TabIndex="1" DisplayDateStart="2018-04-02"/>
         <TextBox x:Name="txtQuoteDisplay" HorizontalAlignment="Left" Height="149" Margin="14,204,0,0" TextWrapping="Wrap" Text="Membership Type: Individual 1 Month &#xD;&#xA;Start Date: 04/02/2018 &#xD;&#xA;End Date: 05/02/2018 &#xD;&#xA;Membership Cost per Month: $9.99 &#xD;&#xA;Subtotal: $9.99 &#xD;&#xA;Additional Feature: Locker Rental &#xD;&#xA;&#xD;&#xA;Total: $10.99" VerticalAlignment="Top" Width="329" Background="#FFEECD86" Foreground="#FF3D3242" TextChanged="txtQuoteDisplay_TextChanged" FontFamily="Courier New" FontSize="10.667"/>
         <Label x:Name="lblMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
+        <ComboBox x:Name="cobAdditionalFeatures" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0">
+            <ComboBoxItem/>
+            <ComboBoxItem Content="Personal Training Paln"/>
+            <ComboBoxItem Content="Locker Rental"/>
+            <ComboBoxItem Content="Personal Training + Locker Rental"/>
+        </ComboBox>
+        <Button x:Name="btnStartApplication" Content="Start Application" HorizontalAlignment="Left" Margin="381,333,0,0" VerticalAlignment="Top" Width="101" Click="button_Click" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="361,176,0,0" VerticalAlignment="Top" Width="59" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" Click="btnClear_Click"/>
 
     </Grid>
 </Window>
