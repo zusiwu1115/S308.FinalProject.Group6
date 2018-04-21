@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace FitnessClub
 {
@@ -22,6 +24,20 @@ namespace FitnessClub
         public MembershipSignup()
         {
             InitializeComponent();
+        }
+
+        private void btnQuotation_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSales MembershipSalesWindow = new MembershipSales();
+            MembershipSalesWindow.Show();
+            this.Close();
+        }
+
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
         }
     }
 }

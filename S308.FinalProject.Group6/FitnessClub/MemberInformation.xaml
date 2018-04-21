@@ -14,20 +14,17 @@
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <GroupBox x:Name="grpSearch" Header="Member Search" HorizontalAlignment="Left" Margin="9,57,0,0" VerticalAlignment="Top" Height="109" Width="472" Foreground="White" FontSize="18.667"/>
         <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="187,88,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblPhoneNumber" Content="Phone Number" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="20" Margin="82,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Text="Wilson" Background="#FFEECD86" Foreground="#FF3D3242"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="20" Margin="234,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Text="samwilson@gmail.com" Background="#FFEECD86" Foreground="#FF3D3242"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="20" Margin="105,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Text="8123617787" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="20" Margin="82,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="20" Margin="234,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="20" Margin="105,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="#FFEECD86" Foreground="#FF3D3242"/>
         <Label x:Name="lblMemberInfo" Content="Member Information" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="15"/>
-        <GroupBox x:Name="grpSearch" Header="Member Search" HorizontalAlignment="Left" Margin="9,57,0,0" VerticalAlignment="Top" Height="109" Width="472" Foreground="White" FontSize="18.667"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="15" Click="btnMainMenu_Click"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="422,172,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="13"/>
-        <ListBox x:Name="lstMemberList" HorizontalAlignment="Left" Height="128" Margin="10,197,0,0" VerticalAlignment="Top" Width="472" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lstMemberList_SelectionChanged" Background="#FFEECD86" FontFamily="Cordia New" FontSize="16">
-            <ListBoxItem Content="Wilson; sample@iu.edu; 6542541236"/>
-            <ListBoxItem Content="Wilson; samwilsom@gmail.com; 8123617787" Selected="ListBoxItem_Selected"/>
-        </ListBox>
+        <ListBox x:Name="lstMemberList" HorizontalAlignment="Left" Height="128" Margin="10,197,0,0" VerticalAlignment="Top" Width="472" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lstMemberList_SelectionChanged" Background="#FFEECD86" FontFamily="Cordia New" FontSize="16"/>
         <Button x:Name="btnDisplayReport" Content="Display Report" HorizontalAlignment="Left" Margin="393,333,0,0" VerticalAlignment="Top" Width="88" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="13"/>
 
     </Grid>

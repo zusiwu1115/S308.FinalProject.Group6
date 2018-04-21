@@ -29,7 +29,7 @@
             <ComboBoxItem Content="Family 12 Month"/>
         </ComboBox>
         <DatePicker x:Name="datStartDate" HorizontalAlignment="Left" Margin="139,110,0,0" VerticalAlignment="Top" Width="159" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" IsTabStop="True" TabIndex="1" DisplayDateStart="2018-04-02"/>
-        <TextBox x:Name="txtQuoteDisplay" HorizontalAlignment="Left" Height="149" Margin="14,204,0,0" TextWrapping="Wrap" Text="Membership Type: Individual 1 Month &#xD;&#xA;Start Date: 04/02/2018 &#xD;&#xA;End Date: 05/02/2018 &#xD;&#xA;Membership Cost per Month: $9.99 &#xD;&#xA;Subtotal: $9.99 &#xD;&#xA;Additional Feature: Locker Rental &#xD;&#xA;&#xD;&#xA;Total: $10.99" VerticalAlignment="Top" Width="329" Background="#FFEECD86" Foreground="#FF3D3242" TextChanged="txtQuoteDisplay_TextChanged" FontFamily="Courier New" FontSize="10.667"/>
+        <TextBox x:Name="txtQuoteDisplay" HorizontalAlignment="Left" Height="149" Margin="14,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" Background="#FFEECD86" Foreground="#FF3D3242" TextChanged="txtQuoteDisplay_TextChanged" FontFamily="Courier New" FontSize="10.667"/>
         <Label x:Name="lblMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
         <ComboBox x:Name="cobAdditionalFeatures" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0">
             <ComboBoxItem/>

@@ -13,7 +13,7 @@
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7" Click="btnMainMenu_Click"/>
         <Label x:Name="lblPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
         <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <ComboBox x:Name="cobMembershipType" Margin="139,59,194,0" VerticalAlignment="Top" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="1" TabIndex="0" Height="28" IsReadOnly="True" IsTabStop="False">
