@@ -177,7 +177,11 @@ namespace FitnessClub
         private void ClearScreen()
         {
             txtQuoteDisplay.Text = "";
-            
+            txtQuoteDisplay.Text = "";
+            cobAdditionalFeatures.SelectedIndex = 0;
+            cobMembershipType.SelectedIndex = 0;
+            datStartDate.SelectedDate = DateTime.Today;
+
         }
     }
 }
