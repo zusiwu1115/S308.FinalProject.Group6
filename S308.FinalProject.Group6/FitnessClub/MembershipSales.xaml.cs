@@ -103,7 +103,9 @@ namespace FitnessClub
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
-            //Return to Main Menu
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
