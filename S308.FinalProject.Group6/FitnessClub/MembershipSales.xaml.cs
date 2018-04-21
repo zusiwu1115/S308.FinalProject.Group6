@@ -108,6 +108,12 @@ namespace FitnessClub
             this.Close();
         }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSignup MembershipSignupWindow = new MembershipSignup();
+            MembershipSignupWindow.Show();
+            this.Close();
+        }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
@@ -119,11 +125,6 @@ namespace FitnessClub
             txtQuoteDisplay.Text = "";
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            MembershipSignup MembershipSignupWindow = new MembershipSignup();
-            MembershipSignupWindow.Show();
-            this.Close();
-        }
+
     }
 }
