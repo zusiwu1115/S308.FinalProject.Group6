@@ -108,10 +108,6 @@ namespace FitnessClub
             this.Close();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            //Open the Membership Sign up Page
-        }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
@@ -121,6 +117,13 @@ namespace FitnessClub
 
             cobAdditionalFeatures.SelectedItem = "";
             txtQuoteDisplay.Text = "";
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSignup MembershipSignupWindow = new MembershipSignup();
+            MembershipSignupWindow.Show();
+            this.Close();
         }
     }
 }
