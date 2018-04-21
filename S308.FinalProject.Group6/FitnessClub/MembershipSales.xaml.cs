@@ -218,7 +218,7 @@ namespace FitnessClub
 
         }
 
-        public string GetFilePath(string strExtension, bool bolWithTimeStamp)
+        private string GetFilePath(string strExtension, bool bolWithTimeStamp)
         {
             string strFilePath = @"..\..\..\Data\MembershipPricing";
             string strTimeStamp = DateTime.Now.Ticks.ToString();
