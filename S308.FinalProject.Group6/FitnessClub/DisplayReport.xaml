@@ -29,7 +29,7 @@
         <Label x:Name="lblAthleticPerformance" Content="Athletic Performance" HorizontalAlignment="Left" Margin="244,251,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="152"/>
         <Label x:Name="lblOverallHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="244,278,0,0" VerticalAlignment="Top" Foreground="White" Height="29" Width="131"/>
         <Label x:Name="lblStrengthTrainingWeightLoss" Content="Strength Training Weight Loss" HorizontalAlignment="Left" Margin="242,300,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="197"/>
-        <Label x:Name="lblWeightManagement" Content="Weight Management" HorizontalAlignment="Left" Margin="244,327,0,0" VerticalAlignment="Top" Foreground="White" Focusable="True" Height="28" Width="98"/>
+        <Label x:Name="lblWeightManagement" Content="Weight Management" HorizontalAlignment="Left" Margin="244,327,0,0" VerticalAlignment="Top" Foreground="White" Focusable="True" Height="28" Width="131"/>
         <Label x:Name="lblUnit3" Content="lbs" HorizontalAlignment="Left" Margin="454,328,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="20"/>
         <Label x:Name="lblUnit2" Content="lbs" HorizontalAlignment="Left" Margin="454,300,0,0" VerticalAlignment="Top" Foreground="White" Height="29" Width="20"/>
         <Label x:Name="lblAgeResult" Content="" HorizontalAlignment="Left" Margin="360,159,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="31" BorderBrush="White" BorderThickness="0,0,0,1"/>
@@ -52,11 +52,11 @@
         <Label x:Name="lblAdditionalFeaturesResult" Content="" HorizontalAlignment="Left" Margin="135,226,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblTotal" Content="Total" HorizontalAlignment="Left" Margin="14,253,0,0" VerticalAlignment="Top" Foreground="White" Height="27" Width="109"/>
         <Label x:Name="lblTotalResult" Content="" HorizontalAlignment="Left" Margin="135,254,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="98" BorderBrush="White" BorderThickness="0,0,0,1"/>
-        <GroupBox x:Name="grpFitnessGoal" Header="Fitness Goal" HorizontalAlignment="Left" Margin="242,231,0,0" VerticalAlignment="Top" Foreground="White" Height="132" Width="242"/>
-        <Label x:Name="lblWeightLoss" Content="" HorizontalAlignment="Left" Margin="426,302,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="White" BorderThickness="0,0,0,1"/>
-        <Label x:Name="lblWeightLoss_Copy" Content="" HorizontalAlignment="Left" Margin="426,329,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.435,2.038" BorderBrush="White" BorderThickness="0,0,0,1"/>
+        <Label x:Name="lblWeightLossResult" Content="" HorizontalAlignment="Left" Margin="426,302,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="White" BorderThickness="0,0,0,1"/>
+        <Label x:Name="lblWeightManagementResult" Content="" HorizontalAlignment="Left" Margin="426,329,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.435,2.038" BorderBrush="White" BorderThickness="0,0,0,1"/>
         <Label x:Name="lblPerformanceResult" Content="" HorizontalAlignment="Left" Margin="425,246,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="49" RenderTransformOrigin="0.388,3.393" BorderThickness="0,0,0,1" BorderBrush="White"/>
         <Label x:Name="lblHealth" Content="" HorizontalAlignment="Left" Margin="425,273,0,0" VerticalAlignment="Top" Foreground="White" Height="28" Width="55" RenderTransformOrigin="0.388,3.393" BorderBrush="White" BorderThickness="0,0,0,1"/>
+        <GroupBox x:Name="grpFitnessGoal" Header="Fitness Goal" HorizontalAlignment="Left" Margin="242,231,0,0" VerticalAlignment="Top" Foreground="White" Height="132" Width="242"/>
 
     </Grid>
 </Window>

@@ -22,6 +22,7 @@ namespace FitnessClub
         public DisplayReport()
         {
             InitializeComponent();
+            ClearScreen();
         }
 
         private void btnNewSearch_Click(object sender, RoutedEventArgs e)
@@ -49,6 +50,14 @@ namespace FitnessClub
             lblLastNameResult.Content = "";
             lblMembershipCostResult.Content = "";
             lblMembershipTypeResult1.Content = "";
+            lblPerformanceResult.Content = "";
+            lblPhoneResult.Content = "";
+            lblStartDateResult.Content = "";
+            lblSubtotalResult.Content = "";
+            lblTotalResult.Content = "";
+            lblWeightLossResult.Content = "";
+            lblWeightManagementResult.Content = "";
+            lblWeightResult.Content = "";
         }
             
     }
