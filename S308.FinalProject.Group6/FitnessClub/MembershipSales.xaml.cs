@@ -29,18 +29,6 @@ namespace FitnessClub
 
 
 
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu MainMenuWindow = new MainMenu();
-            MainMenuWindow.Show();
-            this.Close();
-        }
-
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            txtQuoteDisplay.Text = "";
-        }
-
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
 
@@ -51,7 +39,7 @@ namespace FitnessClub
 
             string strMembershipType = cbiMembershipType.Content.ToString();
             string strAdditionalFeatures = cbiAdditionalFeatures.Content.ToString();
-            string strStartDate = dtpDatePicked.ToString();
+            string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
 
 
             //validate inputs
@@ -59,7 +47,7 @@ namespace FitnessClub
             { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
             if (strAdditionalFeatures == "")
             { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
-            if (dtpDatePicked < DateTime.Now)
+            if (dtpDatePicked < DateTime.Today)
             { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
 
             //Lookup Pricing in Json Data
@@ -107,12 +95,13 @@ namespace FitnessClub
                 dblMembershipSubtotal = 200.00;
             }
             else
+            {
                 dblMembershipPrice = 0;
                 dblMembershipSubtotal = 0;
+            }
 
-
-            strMemberPrice = dblMembershipPrice.ToString();
-            strMembershipSubtotal = dblMembershipSubtotal.ToString();
+            strMemberPrice = dblMembershipPrice.ToString("C2");
+            strMembershipSubtotal = dblMembershipSubtotal.ToString("C2");
 
 
             //Additional Price
@@ -149,11 +138,11 @@ namespace FitnessClub
             else
                 dblAdditionalPrice = 0;
 
-            strAdditionalPrice = dblAdditionalPrice.ToString();
+            strAdditionalPrice = dblAdditionalPrice.ToString("C2");
 
             //Calculate the total price
-            dblTotoalPrice = dblAdditionalPrice + dblMembershipPrice;
-            strTotalPrice = dblTotoalPrice.ToString();
+            dblTotoalPrice = dblAdditionalPrice + dblMembershipSubtotal;
+            strTotalPrice = dblTotoalPrice.ToString("C2");
 
             //Change End Date
             DateTime EndDate;
@@ -163,7 +152,7 @@ namespace FitnessClub
             else
                 EndDate = dtpDatePicked.AddYears(1);
 
-            strEndDate = EndDate.ToString();
+            strEndDate = EndDate.ToString("MM/dd/yyyy");
 
             //display result in textbox
             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine +
@@ -172,7 +161,7 @@ namespace FitnessClub
                 "Membership Cost Per Month: " + strMemberPrice + Environment.NewLine +
                 "SubTotal (Membership Price): " + strMembershipSubtotal + Environment.NewLine +
                     "Additional Feature(s): " + strAdditionalFeatures + Environment.NewLine +
-                    "Additional Price Per Month: " + strAdditionalPrice + Environment.NewLine +
+                    "Additional Price Subtotal: " + strAdditionalPrice + Environment.NewLine +
                     "Total Price: " + strTotalPrice;
 
 
