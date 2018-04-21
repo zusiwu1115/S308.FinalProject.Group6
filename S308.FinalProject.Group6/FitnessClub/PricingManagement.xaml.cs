@@ -33,5 +33,9 @@ namespace FitnessClub
             this.Close();
         }
 
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

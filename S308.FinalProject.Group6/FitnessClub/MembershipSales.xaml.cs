@@ -24,12 +24,6 @@ namespace FitnessClub
         public MembershipSales()
         {
             InitializeComponent();
-            cobMembershipType.SelectedItem = "";
-
-            //set date picker null
-
-            cobAdditionalFeatures.SelectedItem = "";
-            txtQuoteDisplay.Text = "";
         }
 
 
@@ -38,13 +32,6 @@ namespace FitnessClub
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
-            this.Close();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            MembershipSignup MembershipSignupWindow = new MembershipSignup();
-            MembershipSignupWindow.Show();
             this.Close();
         }
 
@@ -58,6 +45,16 @@ namespace FitnessClub
             txtQuoteDisplay.Text = "";
         }
 
+        private void btnQuote_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void btnStartApplication_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSignup MembershipSignupWindow = new MembershipSignup();
+            MembershipSignupWindow.Show();
+            this.Close();
+        }
     }
 }

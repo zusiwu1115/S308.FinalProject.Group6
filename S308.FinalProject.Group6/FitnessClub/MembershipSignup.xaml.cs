@@ -39,5 +39,10 @@ namespace FitnessClub
             MainMenuWindow.Show();
             this.Close();
         }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -37,5 +37,19 @@ namespace FitnessClub
             MainMenuWindow.Show();
             this.Close();
         }
+
+        private void ClearScreen()
+        {
+            lblAgeResult.Content = "";
+            lblAdditionalFeaturesResult.Content = "";
+            lblEmailResult.Content = "";
+            lblExpirationDateResult.Content = "";
+            lblFirstNameResult.Content = "";
+            lblGenderResult.Content = "";
+            lblLastNameResult.Content = "";
+            lblMembershipCostResult.Content = "";
+            lblMembershipTypeResult1.Content = "";
+        }
+            
     }
 }

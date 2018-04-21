@@ -14,7 +14,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="15" Click="btnMainMenu_Click"/>
-        <Button x:Name="btnSignUp" Content="Sign Up" HorizontalAlignment="Left" Margin="425,339,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="13"/>
         <Button x:Name="btnQuotation" Content="Return to Quotation" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="118" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="14" Click="btnQuotation_Click"/>
         <Label x:Name="lblNewMemberInfo" Content="New Member Information" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
         <Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Margin="94,275,0,0" VerticalAlignment="Top" Foreground="White"/>
@@ -58,5 +57,6 @@
         <Slider x:Name="sliWeightManagement" HorizontalAlignment="Left" Margin="284,275,0,0" VerticalAlignment="Top" Width="132" SmallChange="5" Maximum="300" Cursor="None" TickFrequency="10" Minimum="90" TabIndex="12"/>
         <Label x:Name="lblUnit3" Content="lbs" HorizontalAlignment="Left" Margin="421,267,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblUnit2" Content="lbs" HorizontalAlignment="Left" Margin="416,209,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Button x:Name="btnSignUp" Content="Sign Up" HorizontalAlignment="Left" Margin="394,330,0,0" VerticalAlignment="Top" Width="75" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnSignUp_Click"/>
     </Grid>
 </Window>

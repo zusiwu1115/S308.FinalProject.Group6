@@ -35,8 +35,8 @@
         <TextBox x:Name="txtCurrentPrice_Copy" HorizontalAlignment="Left" Height="28" Margin="141,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsTabStop="False"/>
         <Label x:Name="lblAvailability" Content="Availability" HorizontalAlignment="Left" Margin="12,297,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <CheckBox x:Name="chkAvailability" Content="(Check if Availability)" HorizontalAlignment="Left" Margin="141,310,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" Background="White" Foreground="#FFEECD86"/>
-        <Button x:Name="btnSave" Content="Save Changes" HorizontalAlignment="Left" Margin="376,318,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="6"/>
         <Label x:Name="lblAdjustment" Content="Make Pricing and Avaiability Adjustment" HorizontalAlignment="Right" Margin="0,214,101,0" VerticalAlignment="Top" FontSize="14.667" Foreground="White" Width="280"/>
         <Label x:Name="lblAdjustment_Copy" Content="Current Pricing Information" HorizontalAlignment="Left" Margin="133,93,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Width="177" Height="31"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="407,329,0,0" VerticalAlignment="Top" Width="75" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnSave_Click"/>
     </Grid>
 </Window>

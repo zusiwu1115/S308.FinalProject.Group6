@@ -24,6 +24,7 @@ namespace FitnessClub
         public MemberInformation()
         {
             InitializeComponent();
+            ClearScreen();
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
@@ -33,6 +34,23 @@ namespace FitnessClub
             this.Close();
         }
 
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void btnDisplayReport_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayReport DisplayReportWindow = new DisplayReport();
+            DisplayReportWindow.Show();
+            this.Close();
+        }
+
+        private void ClearScreen()
+        {
+            txtEmail.Text = "";
+            txtLastName.Text = "";
+            txtPhoneNumber.Text = "";
+        }
     }
 }

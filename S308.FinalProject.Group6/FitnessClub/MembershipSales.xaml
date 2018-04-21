@@ -15,7 +15,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7" Click="btnMainMenu_Click"/>
-        <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="425,176,0,0" VerticalAlignment="Top" Width="57" Foreground="#FF3D3242" BorderBrush="White" Background="#FFEECD86" Click="btnQuote_Click" TabIndex="5"/>
         <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <Label x:Name="lblAdditionalFeatures" Content="Additional Features" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
@@ -37,8 +36,9 @@
             <ComboBoxItem Content="Locker Rental"/>
             <ComboBoxItem Content="Personal Training + Locker Rental"/>
         </ComboBox>
-        <Button x:Name="btnStartApplication" Content="Start Application" HorizontalAlignment="Left" Margin="381,333,0,0" VerticalAlignment="Top" Width="101" Click="button_Click" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="361,176,0,0" VerticalAlignment="Top" Width="59" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" Click="btnClear_Click"/>
+        <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="425,176,0,0" VerticalAlignment="Top" Width="57" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" Click="btnQuote_Click"/>
+        <Button x:Name="btnStartApplication" Content="Start Application" HorizontalAlignment="Left" Margin="382,333,0,0" VerticalAlignment="Top" Width="100" BorderBrush="White" Foreground="#FF3D3242" Background="#FFEECD86" Click="btnStartApplication_Click"/>
 
     </Grid>
 </Window>
