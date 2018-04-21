@@ -21,6 +21,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
+        List<Members> MemberList;
         public MembershipSales()
         {
             InitializeComponent();
@@ -28,6 +29,18 @@ namespace FitnessClub
         }
 
 
+
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtQuoteDisplay.Text = "";
+        }
 
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +64,25 @@ namespace FitnessClub
             { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
 
             //Lookup Pricing in Json Data
+            string strFilePath = GetFilePath("json", false)
 
+
+            try
+            {
+                StreamReader reader = new StreamReader(strFilePath);
+                string strJsonData = reader.ReadToEnd();
+                reader.Close();
+
+                //store the value read to strMembershipType, dblMembershipPrice, dblMembershipSubtotal, dblAdditionPrice
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in inporting process: " + ex.Message);
+            }
 
             //use if statement to help find the pricing
             double dblMembershipPrice, dblAdditionalPrice, dblTotoalPrice, dblMembershipSubtotal;
@@ -59,6 +90,9 @@ namespace FitnessClub
 
 
             //Membership Type
+            //need to update the result according to the new stored price
+
+
             if (strMembershipType == "Individual 1 Month")
             {
                 dblMembershipPrice = 9.99;
@@ -182,6 +216,20 @@ namespace FitnessClub
             cobMembershipType.SelectedIndex = 0;
             datStartDate.SelectedDate = DateTime.Today;
 
+        }
+
+        public string GetFilePath(string strExtension, bool bolWithTimeStamp)
+        {
+            string strFilePath = @"..\..\..\Data\MembershipPricing";
+            string strTimeStamp = DateTime.Now.Ticks.ToString();
+
+            if (bolWithTimeStamp)
+            {
+                strFilePath += "_" + strTimeStamp;
+            }
+
+            strFilePath += "." + strExtension;
+            return strFilePath;
         }
     }
 }
