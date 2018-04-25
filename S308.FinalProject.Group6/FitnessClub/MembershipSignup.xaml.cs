@@ -21,16 +21,23 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSignup : Window
     {
+        public string MembershipType { get; set; }
+        public string StartDate { get; set; }
+        public string AdditionalFeature { get; set; }
 
-        List<Members> MemberList;
         public MembershipSignup()
         {
             InitializeComponent();
+
+           
+        }
+        public void DisplayQuote()
+        {
+            txtAge.Text = MembershipType;
         }
 
 
-
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+       private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu MainMenuWindow = new MainMenu();
             MainMenuWindow.Show();
@@ -56,11 +63,9 @@ namespace FitnessClub
             string strOverallHealth = cbiOverallHealth.Content.ToString();
             string strWeightLoss = txtWeightLoss.Text.Trim();
             string strWeightManagement = txtWeightManagement.Text.Trim();
-            ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
-            ComboBoxItem cbiAdditionalFeatures = (ComboBoxItem)cobAdditionalFeatures.SelectedItem;
             DateTime dtpDatePicked = (DateTime)datStartDate.SelectedDate;
-            string strMembershipType = cbiMembershipType.Content.ToString();
-            string strAdditionalFeatures = cbiAdditionalFeatures.Content.ToString();
+            string strMembershipType = lblMembershipTypePreload.Content.ToString();
+            string strAdditionalFeatures = lblAdditionalFeaturePreload.Content.ToString();
             string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
 
             //Change End Date

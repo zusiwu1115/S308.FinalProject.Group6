@@ -105,6 +105,7 @@
     <Compile Include="MembershipSignup.xaml.cs">
       <DependentUpon>MembershipSignup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pricing.cs" />
     <Compile Include="PricingManagement.xaml.cs">
       <DependentUpon>PricingManagement.xaml</DependentUpon>
     </Compile>

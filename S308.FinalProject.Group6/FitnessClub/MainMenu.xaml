@@ -23,8 +23,8 @@
                 <ImageBrush ImageSource="HooiserFitnessClub.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="349,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnMemberInformation_Click"/>
-        <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="180,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnPricingManagement_Click"/>
-        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="20,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Foreground="#FF3D3242" Background="#FFEECD86" Click="btnMembershipSales_Click"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="349,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnMemberInformation_Click" TabIndex="3"/>
+        <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="180,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnPricingManagement_Click" TabIndex="2"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="20,222,0,0" VerticalAlignment="Top" Width="120" Height="120" Foreground="#FF3D3242" Background="#FFEECD86" Click="btnMembershipSales_Click" TabIndex="1"/>
     </Grid>
 </Window>

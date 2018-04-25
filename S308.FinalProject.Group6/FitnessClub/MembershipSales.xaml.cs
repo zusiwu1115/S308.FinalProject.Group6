@@ -21,11 +21,27 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
-        List<Members> MemberList;
+        List<Pricing> PricingIndex;
+        string strMembershipType;
+        string strAdditionalFeatures;
+        string strStartDate;
         public MembershipSales()
         {
             InitializeComponent();
             ClearScreen();
+
+            PricingIndex = GetDataSetFromFile();
+
+            foreach (Pricing p in PricingIndex)
+                {
+                if (p.CurrentAvailability == "Yes")
+                {
+                    cobMembershipType.Items.Add(p.MembershipTpe);
+
+                    //additional feature new json file and class
+                }
+            }
+
         }
 
 
@@ -55,6 +71,8 @@ namespace FitnessClub
             string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
 
 
+
+
             //validate inputs
             if (strMembershipType == "")
             { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
@@ -63,26 +81,14 @@ namespace FitnessClub
             if (dtpDatePicked < DateTime.Today)
             { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
 
-            //Lookup Pricing in Json Data
-            string strFilePath = GetFilePath("json", false)
 
+            //Search Data 
+            Pricing MembershipSearch;
+            MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
 
-            try
-            {
-                StreamReader reader = new StreamReader(strFilePath);
-                string strJsonData = reader.ReadToEnd();
-                reader.Close();
-
-                //store the value read to strMembershipType, dblMembershipPrice, dblMembershipSubtotal, dblAdditionPrice
-
-
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in inporting process: " + ex.Message);
-            }
+            
+             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine + "Pricing: " + MembershipSearch.CurrentPrice;
+              
 
             //use if statement to help find the pricing
             double dblMembershipPrice, dblAdditionalPrice, dblTotoalPrice, dblMembershipSubtotal;
@@ -204,6 +210,13 @@ namespace FitnessClub
         private void btnStartApplication_Click(object sender, RoutedEventArgs e)
         {
             MembershipSignup MembershipSignupWindow = new MembershipSignup();
+
+            //preload info
+            MembershipSignupWindow.MembershipType = strMembershipType;
+            MembershipSignupWindow.StartDate = strStartDate;
+            MembershipSignupWindow.AdditionalFeature = strAdditionalFeatures;
+            MembershipSignupWindow.DisplayQuote();
+
             MembershipSignupWindow.Show();
             this.Close();
         }
@@ -218,18 +231,22 @@ namespace FitnessClub
 
         }
 
-        private string GetFilePath(string strExtension, bool bolWithTimeStamp)
+   //load MemberPricing from Json Data
+   private List<Pricing> GetDataSetFromFile()
         {
-            string strFilePath = @"..\..\..\Data\MembershipPricing";
-            string strTimeStamp = DateTime.Now.Ticks.ToString();
+            List<Pricing> lstPricing = new List<Pricing>();
+            string strFilePath = @"../../../Data/MembershipPricing.json";
 
-            if (bolWithTimeStamp)
+            try
             {
-                strFilePath += "_" + strTimeStamp;
+                string jsonData = File.ReadAllText(strFilePath);
+                lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
             }
-
-            strFilePath += "." + strExtension;
-            return strFilePath;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
+            }
+            return lstPricing;
         }
     }
 }
