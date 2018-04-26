@@ -18,23 +18,10 @@
         <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <Label x:Name="lblAdditionalFeatures" Content="Additional Features" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
-        <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,79,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Individual 1 Month"/>
-            <ComboBoxItem Content="Individual 12 Months"/>
-            <ComboBoxItem Content="Two Person 1 Month"/>
-            <ComboBoxItem Content="Two Person 12 Months"/>
-            <ComboBoxItem Content="Family 1 Month"/>
-            <ComboBoxItem Content="Family 12 Month"/>
-        </ComboBox>
+        <ComboBox x:Name="cobMembershipType" HorizontalAlignment="Left" Margin="139,79,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0"/>
         <DatePicker x:Name="datStartDate" HorizontalAlignment="Left" Margin="139,110,0,0" VerticalAlignment="Top" Width="159" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" IsTabStop="True" TabIndex="1" DisplayDateStart="2018-04-02"/>
         <Label x:Name="lblMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
-        <ComboBox x:Name="cobAdditionalFeatures" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Personal Training Plan"/>
-            <ComboBoxItem Content="Locker Rental"/>
-            <ComboBoxItem Content="Personal Training + Locker Rental"/>
-        </ComboBox>
+        <ComboBox x:Name="cobAdditionalFeatures" HorizontalAlignment="Left" Margin="139,142,0,0" VerticalAlignment="Top" Width="159" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="361,176,0,0" VerticalAlignment="Top" Width="59" Foreground="#FF3D3242" Background="#FFEECD86" BorderBrush="White" Click="btnClear_Click"/>
         <Button x:Name="btnQuote" Content="Quote" HorizontalAlignment="Left" Margin="425,176,0,0" VerticalAlignment="Top" Width="57" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" Click="btnQuote_Click"/>
         <Button x:Name="btnStartApplication" Content="Start Application" HorizontalAlignment="Left" Margin="382,333,0,0" VerticalAlignment="Top" Width="100" BorderBrush="White" Foreground="#FF3D3242" Background="#FFEECD86" Click="btnStartApplication_Click"/>
