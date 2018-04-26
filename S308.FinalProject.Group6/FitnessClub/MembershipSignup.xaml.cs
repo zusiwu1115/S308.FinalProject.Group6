@@ -21,14 +21,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSignup : Window
     {
-        List<Pricing> PricingIndex;
-        List<AdditionalFeaturesPricing> AdditionalPricingIndex;
-        string strMembershipType;
-        string strAdditionalFeatures;
-        string strStartDate;
-        string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
-
-
+       
         //Declare the strings from MembershipSales to call in MembershiSignup Window
         public string MembershipType { get; set; }
         public string StartDate { get; set; }
@@ -41,8 +34,6 @@ namespace FitnessClub
         public MembershipSignup()
         {
             InitializeComponent();
-
-          
         }
 
         //
@@ -80,10 +71,6 @@ namespace FitnessClub
             string strOverallHealth = cbiOverallHealth.Content.ToString();
             string strWeightLoss = txtWeightLoss.Text.Trim();
             string strWeightManagement = txtWeightManagement.Text.Trim();
-
-            //Stil need this declaration if the contents are preloaded and declared in the top?
-            string strMembershipType = lblMembershipTypePreload.Content.ToString();
-            string strAdditionalFeatures = lblAdditionalFeaturePreload.Content.ToString();
   
 
           
@@ -93,17 +80,6 @@ namespace FitnessClub
 
 
             //Still need to valid the remaining fields - need work
-
-            //Preload - need work
-            //Search Data 
-            Pricing MembershipSearch;
-            MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
-            double dblMembershipTypePrice = Convert.ToDouble(MembershipSearch);
-
-
-            AdditionalFeaturesPricing AdditionalFeatureSearch;
-            AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
-            double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch);
 
 
             //instantiate a new member with user input
@@ -121,17 +97,21 @@ namespace FitnessClub
             memNew.OverallHealth = strOverallHealth;
             memNew.StrengthTrainingWeightLoss = strWeightLoss;
             memNew.WeightManagement = strWeightManagement;
-            memNew.MembershipType = strMembershipType;
+            memNew.MembershipType = MembershipType;
 
             //inputs preload from MembershipSales Window
-            memNew.StartDate = strStartDate;
-            memNew.ExpirationDate = strEndDate;
-            memNew.AdditionalFeature = strAdditionalFeatures;
-            memNew.Subtotal = strMembershipSubtotal;
-            memNew.Total = strTotalPrice;
+            memNew.StartDate = StartDate;
+            memNew.ExpirationDate = ExpirationDate;
+            memNew.AdditionalFeature = AdditionalFeature;
+            memNew.Subtotal = Subtotal;
+            memNew.Total = Total;
+
+
+
+            //Write inputs into Json Data
         }
 
-
+       
 
 
         private void btnReturnSales_Click(object sender, RoutedEventArgs e)
