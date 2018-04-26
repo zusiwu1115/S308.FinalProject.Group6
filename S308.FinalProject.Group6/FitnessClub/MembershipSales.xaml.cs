@@ -43,23 +43,21 @@ namespace FitnessClub
                 if (p.CurrentAvailability == "Yes")
                 {
                     cobMembershipType.Items.Add(p.MembershipTpe);
-                    return;
                 }
                 //additional feature new json file and class
-
-                foreach (AdditionalFeaturesPricing a in AdditionalPricingIndex)
+            }
+            foreach (AdditionalFeaturesPricing a in AdditionalPricingIndex)
+            {
+                if (a.CurrentAvailability == "Yes")
                 {
-                    if (a.CurrentAvailability == "Yes")
-                    {
-                        cobAdditionalFeatures.Items.Add(a.MembershipTpe);
-                        return;
-                    }
+                    cobAdditionalFeatures.Items.Add(a.MembershipTpe);
+                 }
 
-                }
             }
         }
+    
 
-      
+
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -237,6 +235,7 @@ namespace FitnessClub
         private void ClearScreen()
         {
             txtQuoteDisplay.Text = "";
+            //add in index
             cobAdditionalFeatures.SelectedItem = "";
             cobMembershipType.SelectedItem = "";
             datStartDate.SelectedDate = DateTime.Today;
