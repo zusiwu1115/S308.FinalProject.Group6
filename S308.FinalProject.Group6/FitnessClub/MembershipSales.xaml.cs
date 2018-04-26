@@ -34,6 +34,7 @@ namespace FitnessClub
             ClearScreen();
 
             PricingIndex = GetDataSetFromFile();
+            AdditionalPricingIndex = GetAdditionalDataSetFromFile();
 
             foreach (Pricing p in PricingIndex)
             {
@@ -73,7 +74,7 @@ namespace FitnessClub
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
             //Variables Declaration
-            double dblTotoalPrice, dblMembershipSubtotal;
+            double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
             string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
 
 
@@ -109,110 +110,91 @@ namespace FitnessClub
             //Search Data 
             Pricing MembershipSearch;
             MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
-            double dblMembershipPrice = Convert.ToDouble(MembershipSearch);
+            double dblMembershipTypePrice = Convert.ToDouble(MembershipSearch);
+           
 
             AdditionalFeaturesPricing AdditionalFeatureSearch;
             AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
-            double dblAdditionalPrice = Convert.ToDouble(AdditionalFeatureSearch);
-
-            
-
-
-            //Display Result
-             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine +
-                "Start Date: " + strStartDate + Environment.NewLine +
-                "End Date: " + strEndDate + Environment.NewLine +
-                "Membership Cost Per Month: " + strMemberPrice + Environment.NewLine +
-                "SubTotal (Membership Price): " + strMembershipSubtotal + Environment.NewLine +
-                    "Additional Feature(s): " + strAdditionalFeatures + Environment.NewLine +
-                    "Additional Price Subtotal: " + strAdditionalPrice + Environment.NewLine +
-                    "Total Price: " + strTotalPrice;
-
+            double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch);
 
             //use if statement to help find the pricing
-
-
-
             //Membership Type
-            //need to update the result according to the new stored price
-
-
             if (strMembershipType == "Individual 1 Month")
             {
-                strMemberPrice = dblMembershipPrice.ToString();
-                strMembershipSubtotal = (dblMembershipPrice).ToString();
+
+                dblMembershipPrice = dblMembershipTypePrice;
+                dblMembershipSubtotal = dblMembershipTypePrice;
             }
 
             else if (strMembershipType == "Individual 12 Months")
             {
-                strMemberPrice = (dblMembershipPrice/12).ToString();
-                strMembershipSubtotal = (dblMembershipPrice).ToString();
+                dblMembershipPrice = dblMembershipTypePrice/12;
+                dblMembershipSubtotal = dblMembershipTypePrice;
             }
 
-
-            //wip
             else if (strMembershipType == "Two Person 1 Month")
             {
-                dblMembershipPrice = 14.99;
-                dblMembershipSubtotal = 14.99;
+                dblMembershipPrice = dblMembershipTypePrice;
+                dblMembershipSubtotal = dblMembershipTypePrice;
             }
 
             else if (strMembershipType == "Two Person 12 Months")
             {
-                dblMembershipPrice = 150.00 / 12;
-                dblMembershipSubtotal = 150.00;
+                dblMembershipPrice = dblMembershipTypePrice / 12;
+                dblMembershipSubtotal = dblMembershipTypePrice;
             }
 
             else if (strMembershipType == "Family 1 Month")
             {
-                dblMembershipPrice = 19.99;
-                dblMembershipSubtotal = 19.99;
+                dblMembershipPrice = dblMembershipTypePrice;
+                dblMembershipSubtotal = dblMembershipTypePrice;
             }
 
             else if (strMembershipType == "Family 12 Months")
             {
-                dblMembershipPrice = 200.00 / 12;
-                dblMembershipSubtotal = 200.00;
+                dblMembershipPrice = dblMembershipTypePrice / 12;
+                dblMembershipSubtotal = dblMembershipTypePrice;
             }
             else
             {
-                dblMembershipPrice = 0;
+                dblMembershipTypePrice = 0;
                 dblMembershipSubtotal = 0;
+                dblMembershipPrice = 0;
             }
 
             strMemberPrice = dblMembershipPrice.ToString("C2");
-            strMembershipSubtotal = dblMembershipSubtotal.ToString("C2");
+            strMembershipSubtotal = dblMembershipTypePrice.ToString("C2");
 
 
             //Additional Price
             if (strAdditionalFeatures == "Personal Training Plan" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
             {
-                dblAdditionalPrice = 5.00;
+                dblAdditionalPrice = dblAdditionalFeaturesPrice;
             }
 
             else if (strAdditionalFeatures == "Personal Training Plan" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
             {
-                dblAdditionalPrice = 5.00 * 12;
+                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
             }
 
             else if (strAdditionalFeatures == "Locker Rental" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
             {
-                dblAdditionalPrice = 1.00;
+                dblAdditionalPrice = dblAdditionalFeaturesPrice;
             }
 
             else if (strAdditionalFeatures == "Locker Rental" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
             {
-                dblAdditionalPrice = 1.00 * 12;
+                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
             }
 
             else if (strAdditionalFeatures == "Personal Training + Locker Rental" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
             {
-                dblAdditionalPrice = 6.00;
+                dblAdditionalPrice = dblAdditionalFeaturesPrice;
             }
 
             else if (strAdditionalFeatures == "Personal Training + Locker Rental" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
             {
-                dblAdditionalPrice = 6.00 * 12;
+                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
             }
 
             else
@@ -224,7 +206,6 @@ namespace FitnessClub
             dblTotoalPrice = dblAdditionalPrice + dblMembershipSubtotal;
             strTotalPrice = dblTotoalPrice.ToString("C2");
 
-            
 
             //display result in textbox
             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine +
@@ -235,9 +216,8 @@ namespace FitnessClub
                     "Additional Feature(s): " + strAdditionalFeatures + Environment.NewLine +
                     "Additional Price Subtotal: " + strAdditionalPrice + Environment.NewLine +
                     "Total Price: " + strTotalPrice;
-
-
         }
+
 
         private void btnStartApplication_Click(object sender, RoutedEventArgs e)
         {
