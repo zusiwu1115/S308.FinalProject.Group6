@@ -123,18 +123,44 @@ namespace FitnessClub
             this.Close();
         }
 
-        private string GetFilePath(string strExtension, bool bolWithTimeStamp)
+        private List<Pricing> GetDataSetFromFile()
         {
-            string strFilePath = @"..\..\..\Data\Members";
-            string strTimeStamp = DateTime.Now.Ticks.ToString();
+            List<Pricing> lstPricing = new List<Pricing>();
+            string strFilePath = @"../../../Data/MembershipPricing.json";
 
-            if (bolWithTimeStamp)
+            try
             {
-                strFilePath += "_" + strTimeStamp;
+                StreamReader reader = new StreamReader(strFilePath);
+                string strJsonData = reader.ReadToEnd();
+                reader.Close();
+                lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(strJsonData);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
+            }
+            return lstPricing;
+        }
 
-            strFilePath += "." + strExtension;
-            return strFilePath;
+
+        //load AdditionalPricing from Json Data
+        private List<AdditionalFeaturesPricing> GetAdditionalDataSetFromFile()
+        {
+            List<AdditionalFeaturesPricing> lstAdditionalPricing = new List<AdditionalFeaturesPricing>();
+            string strFilePath = @"../../../Data/AdditionalPricing.json";
+
+            try
+            {
+                StreamReader reader = new StreamReader(strFilePath);
+                string strJsonData = reader.ReadToEnd();
+                reader.Close();
+                lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(strJsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
+            }
+            return lstAdditionalPricing;
         }
     }
 }

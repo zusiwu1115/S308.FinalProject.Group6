@@ -251,7 +251,9 @@ namespace FitnessClub
 
             try
             {
-                string jsonData = File.ReadAllText(strFilePath);
+                StreamReader reader = new StreamReader(strFilePath);
+                string strJsonData = reader.ReadToEnd();
+                reader.Close();
                 lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
             }
             catch (Exception ex)
@@ -270,7 +272,9 @@ namespace FitnessClub
 
             try
             {
-                string jsonData = File.ReadAllText(strFilePath);
+                StreamReader reader = new StreamReader(strFilePath);
+                string strJsonData = reader.ReadToEnd();
+                reader.Close();
                 lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(jsonData);
             }
             catch (Exception ex)
