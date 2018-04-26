@@ -26,24 +26,31 @@ namespace FitnessClub
         string strMembershipType;
         string strAdditionalFeatures;
         string strStartDate;
-        double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
         string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
 
+
+        //Declare the strings from MembershipSales to call in MembershiSignup Window
         public string MembershipType { get; set; }
         public string StartDate { get; set; }
         public string AdditionalFeature { get; set; }
+        public string ExpirationDate { get; set; }
+        public string Subtotal { get; set; }
+        public string Total { get; set; }
 
-        //need to add in more - need work
 
         public MembershipSignup()
         {
             InitializeComponent();
 
-           
+          
         }
+
+        //
         public void DisplayQuote()
         {
-            txtAge.Text = MembershipType;
+            lblMembershipTypePreload.Content = MembershipType;
+            lblStartDatePreload.Content = StartDate;
+            lblAdditionalFeaturePreload.Content = AdditionalFeature;
         }
 
 
@@ -73,26 +80,13 @@ namespace FitnessClub
             string strOverallHealth = cbiOverallHealth.Content.ToString();
             string strWeightLoss = txtWeightLoss.Text.Trim();
             string strWeightManagement = txtWeightManagement.Text.Trim();
-            DateTime dtpDatePicked = (DateTime)datStartDate.SelectedDate;
+
+            //Stil need this declaration if the contents are preloaded and declared in the top?
             string strMembershipType = lblMembershipTypePreload.Content.ToString();
             string strAdditionalFeatures = lblAdditionalFeaturePreload.Content.ToString();
-            string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
+  
 
-            //Variables Declared from MembershipSales
-            
-            double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
-            string strTotalPrice, strMemberPrice, strAdditionalPrice, strMembershipSubtotal;
-
-            //Change End Date
-            string strEndDate;
-            DateTime EndDate;
-
-            if (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month")
-                EndDate = dtpDatePicked.AddMonths(1);
-            else
-                EndDate = dtpDatePicked.AddYears(1);
-
-            strEndDate = EndDate.ToString("MM/dd/yyyy");
+          
             Members memNew;
 
 
@@ -111,95 +105,6 @@ namespace FitnessClub
             AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
             double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch);
 
-            //use if statement to help find the pricing
-            //Membership Type
-            if (strMembershipType == "Individual 1 Month")
-            {
-
-                dblMembershipPrice = dblMembershipTypePrice;
-                dblMembershipSubtotal = dblMembershipTypePrice;
-            }
-
-            else if (strMembershipType == "Individual 12 Months")
-            {
-                dblMembershipPrice = dblMembershipTypePrice / 12;
-                dblMembershipSubtotal = dblMembershipTypePrice;
-            }
-
-            else if (strMembershipType == "Two Person 1 Month")
-            {
-                dblMembershipPrice = dblMembershipTypePrice;
-                dblMembershipSubtotal = dblMembershipTypePrice;
-            }
-
-            else if (strMembershipType == "Two Person 12 Months")
-            {
-                dblMembershipPrice = dblMembershipTypePrice / 12;
-                dblMembershipSubtotal = dblMembershipTypePrice;
-            }
-
-            else if (strMembershipType == "Family 1 Month")
-            {
-                dblMembershipPrice = dblMembershipTypePrice;
-                dblMembershipSubtotal = dblMembershipTypePrice;
-            }
-
-            else if (strMembershipType == "Family 12 Months")
-            {
-                dblMembershipPrice = dblMembershipTypePrice / 12;
-                dblMembershipSubtotal = dblMembershipTypePrice;
-            }
-            else
-            {
-                dblMembershipTypePrice = 0;
-                dblMembershipSubtotal = 0;
-                dblMembershipPrice = 0;
-            }
-
-            strMemberPrice = dblMembershipPrice.ToString("C2");
-            strMembershipSubtotal = dblMembershipTypePrice.ToString("C2");
-
-
-            //Additional Price
-            if (strAdditionalFeatures == "Personal Training Plan" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
-            {
-                dblAdditionalPrice = dblAdditionalFeaturesPrice;
-            }
-
-            else if (strAdditionalFeatures == "Personal Training Plan" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
-            {
-                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
-            }
-
-            else if (strAdditionalFeatures == "Locker Rental" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
-            {
-                dblAdditionalPrice = dblAdditionalFeaturesPrice;
-            }
-
-            else if (strAdditionalFeatures == "Locker Rental" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
-            {
-                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
-            }
-
-            else if (strAdditionalFeatures == "Personal Training + Locker Rental" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
-            {
-                dblAdditionalPrice = dblAdditionalFeaturesPrice;
-            }
-
-            else if (strAdditionalFeatures == "Personal Training + Locker Rental" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
-            {
-                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
-            }
-
-            else
-                dblAdditionalPrice = 0;
-
-            strAdditionalPrice = dblAdditionalPrice.ToString("C2");
-
-            //Calculate the total price
-            dblTotoalPrice = dblAdditionalPrice + dblMembershipSubtotal;
-
-
 
             //instantiate a new member with user input
             memNew = new Members();
@@ -217,12 +122,13 @@ namespace FitnessClub
             memNew.StrengthTrainingWeightLoss = strWeightLoss;
             memNew.WeightManagement = strWeightManagement;
             memNew.MembershipType = strMembershipType;
+
+            //inputs preload from MembershipSales Window
             memNew.StartDate = strStartDate;
             memNew.ExpirationDate = strEndDate;
             memNew.AdditionalFeature = strAdditionalFeatures;
-
-            //Add in iputs that are loaded from pervious page - need work
             memNew.Subtotal = strMembershipSubtotal;
+            memNew.Total = strTotalPrice;
         }
 
 
@@ -243,9 +149,9 @@ namespace FitnessClub
             try
             {
                 StreamReader reader = new StreamReader(strFilePath);
-                string strJsonData = reader.ReadToEnd();
+                string jsonData = reader.ReadToEnd();
                 reader.Close();
-                lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(strJsonData);
+                lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
             }
             catch (Exception ex)
             {
@@ -265,9 +171,9 @@ namespace FitnessClub
             try
             {
                 StreamReader reader = new StreamReader(strFilePath);
-                string strJsonData = reader.ReadToEnd();
+                string jsonData = reader.ReadToEnd();
                 reader.Close();
-                lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(strJsonData);
+                lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(jsonData);
             }
             catch (Exception ex)
             {

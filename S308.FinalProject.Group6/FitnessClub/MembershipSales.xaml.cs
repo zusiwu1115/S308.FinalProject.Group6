@@ -225,7 +225,11 @@ namespace FitnessClub
             MembershipSignupWindow.StartDate = strStartDate;
             MembershipSignupWindow.AdditionalFeature = strAdditionalFeatures;
             MembershipSignupWindow.DisplayQuote();
-
+            
+            //If it is not displaying should i still include this part?
+            MembershipSignupWindow.ExpirationDate = strEndDate;
+            MembershipSignupWindow.Subtotal = strMembershipSubtotal;
+            MembershipSignupWindow.Total = strTotalPrice;
             MembershipSignupWindow.Show();
             this.Close();
         }
@@ -233,9 +237,8 @@ namespace FitnessClub
         private void ClearScreen()
         {
             txtQuoteDisplay.Text = "";
-            txtQuoteDisplay.Text = "";
-            cobAdditionalFeatures.SelectedIndex = 0;
-            cobMembershipType.SelectedIndex = 0;
+            cobAdditionalFeatures.SelectedItem = "";
+            cobMembershipType.SelectedItem = "";
             datStartDate.SelectedDate = DateTime.Today;
 
         }
@@ -249,7 +252,7 @@ namespace FitnessClub
             try
             {
                 StreamReader reader = new StreamReader(strFilePath);
-                string strJsonData = reader.ReadToEnd();
+                string jsonData = reader.ReadToEnd();
                 reader.Close();
                 lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
             }
@@ -270,7 +273,7 @@ namespace FitnessClub
             try
             {
                 StreamReader reader = new StreamReader(strFilePath);
-                string strJsonData = reader.ReadToEnd();
+                string jsonData = reader.ReadToEnd();
                 reader.Close();
                 lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(jsonData);
             }

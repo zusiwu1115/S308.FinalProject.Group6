@@ -76,6 +76,6 @@
         <Label x:Name="lblAdditionalFeatures" Content="Additional Features" HorizontalAlignment="Left" Margin="11,125,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblMembershipTypePreload" Content="" HorizontalAlignment="Left" Margin="139,61,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFEECD86" Width="120"/>
         <Label x:Name="lblAdditionalFeaturePreload" Content="" HorizontalAlignment="Left" Margin="139,122,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFEECD86" Width="120"/>
-        <DatePicker x:Name="datStartDate" HorizontalAlignment="Left" Margin="139,91,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86"/>
+        <Label x:Name="lblStartDatePreload" Content="" HorizontalAlignment="Left" Margin="139,91,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFEECD86" Width="120"/>
     </Grid>
 </Window>
