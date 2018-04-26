@@ -22,9 +22,12 @@ namespace FitnessClub
     public partial class MembershipSales : Window
     {
         List<Pricing> PricingIndex;
+        List<AdditionalFeaturesPricing> AdditionalPricingIndex;
         string strMembershipType;
         string strAdditionalFeatures;
         string strStartDate;
+
+
         public MembershipSales()
         {
             InitializeComponent();
@@ -33,18 +36,27 @@ namespace FitnessClub
             PricingIndex = GetDataSetFromFile();
 
             foreach (Pricing p in PricingIndex)
-                {
+            {
                 if (p.CurrentAvailability == "Yes")
                 {
                     cobMembershipType.Items.Add(p.MembershipTpe);
+                    return;
+                }
+                //additional feature new json file and class
 
-                    //additional feature new json file and class
+                foreach (AdditionalFeaturesPricing a in AdditionalPricingIndex)
+                {
+                    if (a.CurrentAvailability == "Yes")
+                    {
+                        cobAdditionalFeatures.Items.Add(a.MembershipTpe);
+                        return;
+                    }
+
                 }
             }
-
         }
 
-
+      
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +72,10 @@ namespace FitnessClub
 
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
+            //Variables Declaration
+            double dblTotoalPrice, dblMembershipSubtotal;
+            string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
+
 
             //convert selected items in the input to string
             ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
@@ -71,9 +87,17 @@ namespace FitnessClub
             string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
 
 
+            //Change End Date
+            DateTime EndDate;
 
+            if (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month")
+                EndDate = dtpDatePicked.AddMonths(1);
+            else
+                EndDate = dtpDatePicked.AddYears(1);
 
-            //validate inputs
+            strEndDate = EndDate.ToString("MM/dd/yyyy");
+
+            //validate inputs of Membership type, startdate and Additional Features
             if (strMembershipType == "")
             { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
             if (strAdditionalFeatures == "")
@@ -85,14 +109,28 @@ namespace FitnessClub
             //Search Data 
             Pricing MembershipSearch;
             MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
+            double dblMembershipPrice = Convert.ToDouble(MembershipSearch);
+
+            AdditionalFeaturesPricing AdditionalFeatureSearch;
+            AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
+            double dblAdditionalPrice = Convert.ToDouble(AdditionalFeatureSearch);
 
             
-             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine + "Pricing: " + MembershipSearch.CurrentPrice;
-              
+
+
+            //Display Result
+             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine +
+                "Start Date: " + strStartDate + Environment.NewLine +
+                "End Date: " + strEndDate + Environment.NewLine +
+                "Membership Cost Per Month: " + strMemberPrice + Environment.NewLine +
+                "SubTotal (Membership Price): " + strMembershipSubtotal + Environment.NewLine +
+                    "Additional Feature(s): " + strAdditionalFeatures + Environment.NewLine +
+                    "Additional Price Subtotal: " + strAdditionalPrice + Environment.NewLine +
+                    "Total Price: " + strTotalPrice;
+
 
             //use if statement to help find the pricing
-            double dblMembershipPrice, dblAdditionalPrice, dblTotoalPrice, dblMembershipSubtotal;
-            string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
+
 
 
             //Membership Type
@@ -101,16 +139,18 @@ namespace FitnessClub
 
             if (strMembershipType == "Individual 1 Month")
             {
-                dblMembershipPrice = 9.99;
-                dblMembershipSubtotal = 9.99;
+                strMemberPrice = dblMembershipPrice.ToString();
+                strMembershipSubtotal = (dblMembershipPrice).ToString();
             }
 
             else if (strMembershipType == "Individual 12 Months")
             {
-                dblMembershipPrice = 100.00 / 12;
-                dblMembershipSubtotal = 100.00;
+                strMemberPrice = (dblMembershipPrice/12).ToString();
+                strMembershipSubtotal = (dblMembershipPrice).ToString();
             }
 
+
+            //wip
             else if (strMembershipType == "Two Person 1 Month")
             {
                 dblMembershipPrice = 14.99;
@@ -184,15 +224,7 @@ namespace FitnessClub
             dblTotoalPrice = dblAdditionalPrice + dblMembershipSubtotal;
             strTotalPrice = dblTotoalPrice.ToString("C2");
 
-            //Change End Date
-            DateTime EndDate;
-
-            if (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month")
-                EndDate = dtpDatePicked.AddMonths(1);
-            else
-                EndDate = dtpDatePicked.AddYears(1);
-
-            strEndDate = EndDate.ToString("MM/dd/yyyy");
+            
 
             //display result in textbox
             txtQuoteDisplay.Text = "Membership Type: " + strMembershipType + Environment.NewLine +
@@ -247,6 +279,25 @@ namespace FitnessClub
                 MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
             }
             return lstPricing;
+        }
+
+
+        //load AdditionalPricing from Json Data
+        private List<AdditionalFeaturesPricing> GetAdditionalDataSetFromFile()
+        {
+            List<AdditionalFeaturesPricing> lstAdditionalPricing = new List<AdditionalFeaturesPricing>();
+            string strFilePath = @"../../../Data/AdditionalPricing.json";
+
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+                lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
+            }
+            return lstAdditionalPricing;
         }
     }
 }

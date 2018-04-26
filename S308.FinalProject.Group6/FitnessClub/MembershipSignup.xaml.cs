@@ -111,24 +111,10 @@ namespace FitnessClub
             memNew.StartDate = strStartDate;
             memNew.ExpirationDate = strEndDate;
             memNew.AdditionalFeature = strAdditionalFeatures;
-
-
-            //Write input into Json Data
-            string strFilePath = GetFilePath("json", true);
-
-            try
-            {
-                StreamWriter writer = new StreamWriter(strFilePath, false);
-                string JsonData = JsonConvert.SerializeObject(MemberList);
-                writer.Write(JsonData);
-                writer.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in export process: " + ex.Message);
-            }
-            MessageBox.Show("Export completed!" + Environment.NewLine + "File Created: " + strFilePath);
         }
+
+
+
 
         private void btnReturnSales_Click(object sender, RoutedEventArgs e)
         {
