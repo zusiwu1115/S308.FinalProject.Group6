@@ -143,6 +143,7 @@ namespace FitnessClub
         }
 
 
+
         //load AdditionalPricing from Json Data
         private List<AdditionalFeaturesPricing> GetAdditionalDataSetFromFile()
         {
