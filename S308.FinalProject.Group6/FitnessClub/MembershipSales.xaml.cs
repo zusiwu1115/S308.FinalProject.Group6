@@ -59,29 +59,36 @@ namespace FitnessClub
 
 
 
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu MainMenuWindow = new MainMenu();
-            MainMenuWindow.Show();
-            this.Close();
-        }
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            txtQuoteDisplay.Text = "";
-        }
 
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
        //convert selected items in the input to string
-            ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
-            ComboBoxItem cbiAdditionalFeatures = (ComboBoxItem)cobAdditionalFeatures.SelectedItem;
+           // ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
+            //ComboBoxItem cbiAdditionalFeatures = (ComboBoxItem)cobAdditionalFeatures.SelectedItem;
             DateTime dtpDatePicked = (DateTime)datStartDate.SelectedDate;
 
-            string strMembershipType = cbiMembershipType.Content.ToString();
-            string strAdditionalFeatures = cbiAdditionalFeatures.Content.ToString();
-            string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
+            strMembershipType = cobMembershipType.SelectedItem.ToString();
+            strAdditionalFeatures = cobAdditionalFeatures.SelectedItem.ToString();
+            strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
 
+            //validate inputs of Membership type, startdate and Additional Features
+            if (strMembershipType == "")
+            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
+            if (strAdditionalFeatures == "")
+            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
+            if (dtpDatePicked < DateTime.Today)
+            { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
+
+            //Search Data 
+            Pricing MembershipSearch;
+            MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
+            double dblMembershipTypePrice = Convert.ToDouble(MembershipSearch.CurrentPrice);
+
+
+            AdditionalFeaturesPricing AdditionalFeatureSearch;
+            AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
+            double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch.CurrentPrice);
 
             //Change End Date
             DateTime EndDate;
@@ -92,25 +99,6 @@ namespace FitnessClub
                 EndDate = dtpDatePicked.AddYears(1);
 
             strEndDate = EndDate.ToString("MM/dd/yyyy");
-
-            //validate inputs of Membership type, startdate and Additional Features
-            if (strMembershipType == "")
-            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
-            if (strAdditionalFeatures == "")
-            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
-            if (dtpDatePicked < DateTime.Today)
-            { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
-
-
-            //Search Data 
-            Pricing MembershipSearch;
-            MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
-            double dblMembershipTypePrice = Convert.ToDouble(MembershipSearch);
-           
-
-            AdditionalFeaturesPricing AdditionalFeatureSearch;
-            AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
-            double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch);
 
             //use if statement to help find the pricing
             //Membership Type
@@ -211,6 +199,8 @@ namespace FitnessClub
                     "Additional Feature(s): " + strAdditionalFeatures + Environment.NewLine +
                     "Additional Price Subtotal: " + strAdditionalPrice + Environment.NewLine +
                     "Total Price: " + strTotalPrice;
+
+            btnStartApplication.Visibility = Visibility.Visible;
         }
 
 
@@ -235,10 +225,10 @@ namespace FitnessClub
         private void ClearScreen()
         {
             txtQuoteDisplay.Text = "";
-            //add in index
-            cobAdditionalFeatures.SelectedItem = "";
-            cobMembershipType.SelectedItem = "";
+            cobAdditionalFeatures.SelectedIndex = 0;
+            cobMembershipType.SelectedIndex = 0;
             datStartDate.SelectedDate = DateTime.Today;
+            btnStartApplication.Visibility = Visibility.Hidden;
 
         }
 
@@ -281,6 +271,18 @@ namespace FitnessClub
                 MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
             }
             return lstAdditionalPricing;
+        }
+
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu MainMenuWindow = new MainMenu();
+            MainMenuWindow.Show();
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            ClearScreen();
         }
     }
 }
