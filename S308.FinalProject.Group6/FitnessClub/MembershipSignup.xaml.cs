@@ -21,9 +21,19 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSignup : Window
     {
+        List<Pricing> PricingIndex;
+        List<AdditionalFeaturesPricing> AdditionalPricingIndex;
+        string strMembershipType;
+        string strAdditionalFeatures;
+        string strStartDate;
+        double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
+        string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
+
         public string MembershipType { get; set; }
         public string StartDate { get; set; }
         public string AdditionalFeature { get; set; }
+
+        //need to add in more - need work
 
         public MembershipSignup()
         {
@@ -68,6 +78,11 @@ namespace FitnessClub
             string strAdditionalFeatures = lblAdditionalFeaturePreload.Content.ToString();
             string strStartDate = dtpDatePicked.ToString("MM/dd/yyyy");
 
+            //Variables Declared from MembershipSales
+            
+            double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
+            string strTotalPrice, strMemberPrice, strAdditionalPrice, strMembershipSubtotal;
+
             //Change End Date
             string strEndDate;
             DateTime EndDate;
@@ -80,17 +95,111 @@ namespace FitnessClub
             strEndDate = EndDate.ToString("MM/dd/yyyy");
             Members memNew;
 
-            //Valid inputs
-            if (strMembershipType == "")
-            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
-            if (strAdditionalFeatures == "")
-            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
-            if (dtpDatePicked < DateTime.Today)
-            { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
 
-            //Still need to valid the remaining fields
 
-            //Same as MembershipSales need to get the result of New Pricing
+
+            //Still need to valid the remaining fields - need work
+
+            //Preload - need work
+            //Search Data 
+            Pricing MembershipSearch;
+            MembershipSearch = PricingIndex.Where(p => p.MembershipTpe == strMembershipType).FirstOrDefault();
+            double dblMembershipTypePrice = Convert.ToDouble(MembershipSearch);
+
+
+            AdditionalFeaturesPricing AdditionalFeatureSearch;
+            AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
+            double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch);
+
+            //use if statement to help find the pricing
+            //Membership Type
+            if (strMembershipType == "Individual 1 Month")
+            {
+
+                dblMembershipPrice = dblMembershipTypePrice;
+                dblMembershipSubtotal = dblMembershipTypePrice;
+            }
+
+            else if (strMembershipType == "Individual 12 Months")
+            {
+                dblMembershipPrice = dblMembershipTypePrice / 12;
+                dblMembershipSubtotal = dblMembershipTypePrice;
+            }
+
+            else if (strMembershipType == "Two Person 1 Month")
+            {
+                dblMembershipPrice = dblMembershipTypePrice;
+                dblMembershipSubtotal = dblMembershipTypePrice;
+            }
+
+            else if (strMembershipType == "Two Person 12 Months")
+            {
+                dblMembershipPrice = dblMembershipTypePrice / 12;
+                dblMembershipSubtotal = dblMembershipTypePrice;
+            }
+
+            else if (strMembershipType == "Family 1 Month")
+            {
+                dblMembershipPrice = dblMembershipTypePrice;
+                dblMembershipSubtotal = dblMembershipTypePrice;
+            }
+
+            else if (strMembershipType == "Family 12 Months")
+            {
+                dblMembershipPrice = dblMembershipTypePrice / 12;
+                dblMembershipSubtotal = dblMembershipTypePrice;
+            }
+            else
+            {
+                dblMembershipTypePrice = 0;
+                dblMembershipSubtotal = 0;
+                dblMembershipPrice = 0;
+            }
+
+            strMemberPrice = dblMembershipPrice.ToString("C2");
+            strMembershipSubtotal = dblMembershipTypePrice.ToString("C2");
+
+
+            //Additional Price
+            if (strAdditionalFeatures == "Personal Training Plan" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
+            {
+                dblAdditionalPrice = dblAdditionalFeaturesPrice;
+            }
+
+            else if (strAdditionalFeatures == "Personal Training Plan" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
+            {
+                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
+            }
+
+            else if (strAdditionalFeatures == "Locker Rental" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
+            {
+                dblAdditionalPrice = dblAdditionalFeaturesPrice;
+            }
+
+            else if (strAdditionalFeatures == "Locker Rental" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
+            {
+                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
+            }
+
+            else if (strAdditionalFeatures == "Personal Training + Locker Rental" && (strMembershipType == "Individual 1 Month" || strMembershipType == "Two Person 1 Month" || strMembershipType == "Family 1 Month"))
+            {
+                dblAdditionalPrice = dblAdditionalFeaturesPrice;
+            }
+
+            else if (strAdditionalFeatures == "Personal Training + Locker Rental" && (strMembershipType == "Individual 12 Months" || strMembershipType == "Two Person 12 Months" || strMembershipType == "Family 12 Months"))
+            {
+                dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
+            }
+
+            else
+                dblAdditionalPrice = 0;
+
+            strAdditionalPrice = dblAdditionalPrice.ToString("C2");
+
+            //Calculate the total price
+            dblTotoalPrice = dblAdditionalPrice + dblMembershipSubtotal;
+
+
 
             //instantiate a new member with user input
             memNew = new Members();
@@ -111,6 +220,9 @@ namespace FitnessClub
             memNew.StartDate = strStartDate;
             memNew.ExpirationDate = strEndDate;
             memNew.AdditionalFeature = strAdditionalFeatures;
+
+            //Add in iputs that are loaded from pervious page - need work
+            memNew.Subtotal = strMembershipSubtotal;
         }
 
 

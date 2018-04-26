@@ -26,6 +26,8 @@ namespace FitnessClub
         string strMembershipType;
         string strAdditionalFeatures;
         string strStartDate;
+        double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
+        string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
 
 
         public MembershipSales()
@@ -73,12 +75,7 @@ namespace FitnessClub
 
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
-            //Variables Declaration
-            double dblTotoalPrice, dblMembershipSubtotal, dblMembershipPrice, dblAdditionalPrice;
-            string strTotalPrice, strMemberPrice, strAdditionalPrice, strEndDate, strMembershipSubtotal;
-
-
-            //convert selected items in the input to string
+       //convert selected items in the input to string
             ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
             ComboBoxItem cbiAdditionalFeatures = (ComboBoxItem)cobAdditionalFeatures.SelectedItem;
             DateTime dtpDatePicked = (DateTime)datStartDate.SelectedDate;
@@ -223,7 +220,7 @@ namespace FitnessClub
         {
             MembershipSignup MembershipSignupWindow = new MembershipSignup();
 
-            //preload info
+            //preload info - need work
             MembershipSignupWindow.MembershipType = strMembershipType;
             MembershipSignupWindow.StartDate = strStartDate;
             MembershipSignupWindow.AdditionalFeature = strAdditionalFeatures;
