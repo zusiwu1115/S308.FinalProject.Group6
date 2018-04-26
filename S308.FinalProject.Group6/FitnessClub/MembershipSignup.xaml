@@ -46,7 +46,7 @@
         <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="23" Margin="338,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="8"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="338,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="7"/>
         <Label x:Name="lblUnit" Content="lbs" HorizontalAlignment="Left" Margin="435,92,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label x:Name="lblAthleticPerformance" Content="Athletic Performance" HorizontalAlignment="Left" Margin="280,156,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblAthleticPerformance" Content="Training Type" HorizontalAlignment="Left" Margin="280,156,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblOverallHealth" Content="Overall Health" HorizontalAlignment="Left" Margin="280,205,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblStrengthTrainingWeightLoss" Content="Strength Training Weight Loss" HorizontalAlignment="Left" Margin="280,260,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblWeightManagement" Content="Weight Management" HorizontalAlignment="Left" Margin="280,320,0,0" VerticalAlignment="Top" Foreground="White" Focusable="True"/>
@@ -55,27 +55,14 @@
         <Button x:Name="btnSignUp" Content="Sign Up" HorizontalAlignment="Left" Margin="407,387,0,0" VerticalAlignment="Top" Width="75" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnSignUp_Click"/>
         <TextBox x:Name="txtWeightManagement" HorizontalAlignment="Left" Height="23" Margin="284,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="8"/>
         <TextBox x:Name="txtWeightLoss" HorizontalAlignment="Left" Height="23" Margin="284,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Foreground="#FF3D3242" Background="#FFEECD86" TabIndex="8"/>
-        <ComboBox x:Name="cobAthleticPerformance" HorizontalAlignment="Left" Margin="284,183,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" TabIndex="2" SelectedIndex="0">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Casual Training"/>
-            <ComboBoxItem Content="Regular Training" Visibility="Hidden"/>
-            <ComboBoxItem Content="Intense Training"/>
-            <ComboBoxItem Content="Professional"/>
-        </ComboBox>
-        <ComboBox x:Name="cobOverallHealth" HorizontalAlignment="Left" Margin="284,232,0,0" VerticalAlignment="Top" Width="120" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" TabIndex="2" SelectedIndex="0">
-            <ComboBoxItem/>
-            <ComboBoxItem Content="Poor"/>
-            <ComboBoxItem Content="Less Well" Visibility="Hidden"/>
-            <ComboBoxItem Content="Good"/>
-            <ComboBoxItem Content="Very Good"/>
-            <ComboBoxItem Content="Excellent"/>
-        </ComboBox>
         <Button x:Name="btnReturnSales" Content="Return To Quotation" HorizontalAlignment="Left" Margin="284,10,0,0" VerticalAlignment="Top" Width="116" Background="#FF3D3242" BorderBrush="{x:Null}" OpacityMask="Black" Foreground="White" Click="btnReturnSales_Click"/>
         <Label x:Name="lblmembershipType" Content="Membership Type" HorizontalAlignment="Left" Margin="20,61,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="62,92,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="lblAdditionalFeatures" Content="Additional Features" HorizontalAlignment="Left" Margin="11,125,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label x:Name="lblMembershipTypePreload" Content="" HorizontalAlignment="Left" Margin="139,61,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFEECD86" Width="120"/>
-        <Label x:Name="lblAdditionalFeaturePreload" Content="" HorizontalAlignment="Left" Margin="139,122,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFEECD86" Width="120"/>
-        <Label x:Name="lblStartDatePreload" Content="" HorizontalAlignment="Left" Margin="139,91,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFEECD86" Width="120"/>
+        <Label x:Name="lblMembershipTypePreload" Content="" HorizontalAlignment="Left" Margin="139,61,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" Background="#FFEECD86" Width="120"/>
+        <Label x:Name="lblAdditionalFeaturePreload" Content="" HorizontalAlignment="Left" Margin="139,122,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" Background="#FFEECD86" Width="120"/>
+        <Label x:Name="lblStartDatePreload" Content="" HorizontalAlignment="Left" Margin="139,91,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" Background="#FFEECD86" Width="120"/>
+        <Slider x:Name="slbTrainingType" HorizontalAlignment="Left" Margin="284,187,0,0" VerticalAlignment="Top" Width="189" Maximum="3" SmallChange="1"/>
+        <Slider x:Name="slbOverallHealth" HorizontalAlignment="Left" Margin="284,236,0,0" VerticalAlignment="Top" Width="189" Maximum="4" SmallChange="1"/>
     </Grid>
 </Window>

@@ -21,7 +21,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSignup : Window
     {
-       
+        List<Members> MemberIndex;
         //Declare the strings from MembershipSales to call in MembershiSignup Window
         public string MembershipType { get; set; }
         public string StartDate { get; set; }
@@ -30,10 +30,28 @@ namespace FitnessClub
         public string Subtotal { get; set; }
         public string Total { get; set; }
 
+        enum TrainingType
+        {
+            Casual = 0,
+            Regular = 1,
+            Intense = 2,
+            Professional = 3
+        };
 
+        //SlideBar Value Declaration
+        enum OverallHealth
+        {
+            Poor = 0,
+            LessWell = 1,
+            Good = 2,
+            VeryGood = 3,
+            Excellent = 4
+        };
         public MembershipSignup()
         {
             InitializeComponent();
+            MemberIndex = GetMemberDataSetFromFile();
+
         }
 
         //
@@ -65,18 +83,36 @@ namespace FitnessClub
             string strGender = cbiGender.Content.ToString();
             string strAge = txtAge.Text.Trim();
             string strWeight = txtWeight.Text.Trim();
-            ComboBoxItem cbiAthleticPerformance = (ComboBoxItem)cobAthleticPerformance.SelectedItem;
-            string strAthlecticPerformance = cbiAthleticPerformance.Content.ToString();
-            ComboBoxItem cbiOverallHealth = (ComboBoxItem)cobOverallHealth.SelectedItem;
-            string strOverallHealth = cbiOverallHealth.Content.ToString();
             string strWeightLoss = txtWeightLoss.Text.Trim();
             string strWeightManagement = txtWeightManagement.Text.Trim();
-  
-
-          
             Members memNew;
 
+            //SlideBar Declaration
+            double dblTrainingType = slbTrainingType.Value;
+            string strTrainingType = "";
 
+            if (dblTrainingType == (double)TrainingType.Casual)
+                strTrainingType = TrainingType.Casual.ToString();
+            else if (dblTrainingType == (double)TrainingType.Regular)
+                strTrainingType = TrainingType.Regular.ToString();
+            else if (dblTrainingType == (double)TrainingType.Intense)
+                strTrainingType = TrainingType.Intense.ToString();
+            else if (dblTrainingType == (double)TrainingType.Professional)
+                strTrainingType = TrainingType.Professional.ToString();
+
+            double dblOverallHealth = slbOverallHealth.Value;
+            string strOverallHealth = "";
+
+            if (dblOverallHealth == (double)OverallHealth.Poor)
+                strOverallHealth = OverallHealth.Poor.ToString();
+            else if (dblOverallHealth == (double)OverallHealth.LessWell)
+                strOverallHealth = OverallHealth.LessWell.ToString();
+            else if (dblOverallHealth == (double)OverallHealth.Good)
+                strOverallHealth = OverallHealth.Good.ToString();
+            else if (dblOverallHealth == (double)OverallHealth.VeryGood)
+                strOverallHealth = OverallHealth.VeryGood.ToString();
+            else if (dblOverallHealth == (double)OverallHealth.Excellent)
+                strOverallHealth = OverallHealth.Excellent.ToString();
 
 
             //Still need to valid the remaining fields - need work
@@ -93,7 +129,7 @@ namespace FitnessClub
             memNew.Gender = strGender;
             memNew.Age = strAge;
             memNew.Weight = strWeight;
-            memNew.AthleticPerformance = strAthlecticPerformance;
+            memNew.AthleticPerformance = strTrainingType;
             memNew.OverallHealth = strOverallHealth;
             memNew.StrengthTrainingWeightLoss = strWeightLoss;
             memNew.WeightManagement = strWeightManagement;
@@ -106,9 +142,24 @@ namespace FitnessClub
             memNew.Subtotal = Subtotal;
             memNew.Total = Total;
 
-
-
+            MemberIndex.Add(memNew);
+            
             //Write inputs into Json Data
+            string strFilePath = @"../../../Data/Members.json";
+
+            try
+            {
+                StreamWriter writer = new StreamWriter(strFilePath, false);
+                string jsonData = JsonConvert.SerializeObject(MemberIndex);
+                writer.Write(jsonData);
+                writer.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export process: " + ex.Message);
+            }
+            MessageBox.Show("Export Completed!" + Environment.NewLine + strFilePath);
         }
 
        
@@ -121,45 +172,25 @@ namespace FitnessClub
             this.Close();
         }
 
-        private List<Pricing> GetDataSetFromFile()
-        {
-            List<Pricing> lstPricing = new List<Pricing>();
-            string strFilePath = @"../../../Data/MembershipPricing.json";
-
-            try
-            {
-                StreamReader reader = new StreamReader(strFilePath);
-                string jsonData = reader.ReadToEnd();
-                reader.Close();
-                lstPricing = JsonConvert.DeserializeObject<List<Pricing>>(jsonData);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
-            }
-            return lstPricing;
-        }
-
-
 
         //load AdditionalPricing from Json Data
-        private List<AdditionalFeaturesPricing> GetAdditionalDataSetFromFile()
+        private List<Members> GetMemberDataSetFromFile()
         {
-            List<AdditionalFeaturesPricing> lstAdditionalPricing = new List<AdditionalFeaturesPricing>();
-            string strFilePath = @"../../../Data/AdditionalPricing.json";
+            List<Members> lstMembers = new List<Members>();
+            string strFilePath = @"../../../Data/Members.json";
 
             try
             {
                 StreamReader reader = new StreamReader(strFilePath);
                 string jsonData = reader.ReadToEnd();
                 reader.Close();
-                lstAdditionalPricing = JsonConvert.DeserializeObject<List<AdditionalFeaturesPricing>>(jsonData);
+                lstMembers = JsonConvert.DeserializeObject<List<Members>>(jsonData);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading Membership Pricing from file: " + ex.Message);
+                MessageBox.Show("Error loading Members from file: " + ex.Message);
             }
-            return lstAdditionalPricing;
+            return lstMembers;
         }
     }
 }
