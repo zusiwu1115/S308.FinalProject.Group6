@@ -16,7 +16,7 @@
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="7" Click="btnMainMenu_Click"/>
         <Label x:Name="lblPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
         <Label x:Name="lblPricingType" Content="Pricing Type" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
-        <ComboBox x:Name="cobMembershipType" Margin="139,59,194,0" VerticalAlignment="Top" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0" Height="28" IsTabStop="False">
+        <ComboBox x:Name="cobMembershipType" Margin="139,59,194,0" VerticalAlignment="Top" Background="#FFEECD86" Foreground="#FF3D3242" BorderBrush="White" SelectedIndex="0" TabIndex="0" Height="28" IsReadOnly="True" IsTabStop="False">
             <ComboBoxItem x:Name="cboItem"/>
             <ComboBoxItem x:Name="cboIndividualOneMonth" Content="Individual 1 Month"/>
             <ComboBoxItem x:Name="cboIndividualTwelvesMonths" Content="Individual 12 Months"/>
@@ -29,8 +29,8 @@
         </ComboBox>
         <Label x:Name="lblCurrentPrice" Content="Current Price" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White" Width="97"/>
         <TextBox x:Name="txtCurrentPrice" HorizontalAlignment="Left" Height="28" Margin="139,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsReadOnly="True" IsTabStop="False"/>
-        <Label x:Name="lblCurrentAvailability" Content="Current Availability?" HorizontalAlignment="Left" Margin="0,168,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
-        <TextBox x:Name="txtCurrentAvailabity" HorizontalAlignment="Right" Height="28" Margin="0,161,194,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsReadOnly="True" IsTabStop="False"/>
+        <Label x:Name="lblCurrentAvailability" Content="Current Availability?" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
+        <TextBox x:Name="txtCurrentAvailabity" HorizontalAlignment="Right" Height="28" Margin="0,168,194,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsReadOnly="True" IsTabStop="False"/>
         <Label x:Name="lblPrice" Content="Price" HorizontalAlignment="Left" Margin="12,262,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
         <TextBox x:Name="txtCurrentPrice_Copy" HorizontalAlignment="Left" Height="28" Margin="141,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" TextChanged="textBox_TextChanged" Background="#FFEECD86" IsTabStop="False"/>
         <Label x:Name="lblAvailability" Content="Availability" HorizontalAlignment="Left" Margin="12,297,0,0" VerticalAlignment="Top" FontSize="13.333" Foreground="White"/>
