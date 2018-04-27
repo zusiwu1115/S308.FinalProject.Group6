@@ -30,7 +30,7 @@ namespace FitnessClub
             InitializeComponent();
             ClearScreen();
 
-            memberIndex = GetDataSetFromFile();
+            memberIndex = GetMemberDataSetFromFile();
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
@@ -40,31 +40,28 @@ namespace FitnessClub
             this.Close();
         }
 
-        private List<Members> GetDataSetFromFile()
-        {
-            List < Members > 1stMember = new List<Members>();
 
+        private List<Members> GetMemberDataSetFromFile()
+        {
+            List<Members> lstMember = new List<Members>();
             string strFilePath = @"../../../Data/Members.json";
 
             try
             {
-                string jsonData = File.ReadAllText(strFilePath);
-                1stMember = JsonConvert.DeserializeObject<List<Members>>(jsonData);
+                StreamReader reader = new StreamReader(strFilePath);
+                string jsonData = reader.ReadToEnd();
+                reader.Close();
+                lstMember = JsonConvert.DeserializeObject<List<Members>>(jsonData);
             }
-
             catch (Exception ex)
             {
-                Console.WriteLine("Error loading members information from file: " + ex.Message);
+                MessageBox.Show("Error loading Members from file: " + ex.Message);
             }
-
-            return 1stMember;
+            return lstMember;
         }
-
-
-
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            List<Members> memberSearch;
+            
 
             //Declare Variables
             string strLastName = txtLastName.Text.Trim();
@@ -73,28 +70,23 @@ namespace FitnessClub
 
             lstMemberList.Items.Clear();
 
+            Members memberSearch;
             memberSearch = memberIndex.Where
-                (p => p.LastName.StartsWith(strLastName)
-                && p.Email == strEmail
-                && p.PhoneNumber == strPhone);
+                (m => m.LastName.StartsWith(strLastName)
+                && m.Email == strEmail
+                && m.PhoneNumber == strPhone);
 
-            foreach (Members p in memberSearch)
+         
+
+            foreach (Members m in memberSearch)
             {
-                lstMemberList.Items.Add(p.FirstName);
+                lstMemberList.Items.Add(m.FirstName);
             }
 
             lblNumFound.Content = "(" + memberSearch.Count.ToString() + ")";
 
         }
 
-
-
-        private void btnDisplayReport_Click(object sender, RoutedEventArgs e)
-        {
-            DisplayReport DisplayReportWindow = new DisplayReport();
-            DisplayReportWindow.Show();
-            this.Close();
-        }
 
         private void ClearScreen()
         {
