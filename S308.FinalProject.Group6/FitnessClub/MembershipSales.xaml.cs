@@ -46,12 +46,14 @@ namespace FitnessClub
                 }
                 //additional feature new json file and class
             }
+
+            cobAdditionalFeatures.SelectedIndex = 0;
             foreach (AdditionalFeaturesPricing a in AdditionalPricingIndex)
             {
                 if (a.CurrentAvailability == "Yes")
                 {
                     cobAdditionalFeatures.Items.Add(a.MembershipTpe);
-                 }
+                }
 
             }
         }
@@ -79,7 +81,7 @@ namespace FitnessClub
             { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
             if (strAdditionalFeatures == "Please Select")
             { MessageBox.Show("Please select additional feature(s) from the list."); return; }
-            
+
 
             //Search Data 
             Pricing MembershipSearch;
@@ -90,7 +92,7 @@ namespace FitnessClub
             AdditionalFeaturesPricing AdditionalFeatureSearch;
             AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
             double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch.CurrentPrice);
-            
+
 
             //Change End Date
             DateTime EndDate;
@@ -113,7 +115,7 @@ namespace FitnessClub
 
             else if (strMembershipType == "Individual 12 Months")
             {
-                dblMembershipPrice = dblMembershipTypePrice/12;
+                dblMembershipPrice = dblMembershipTypePrice / 12;
                 dblMembershipSubtotal = dblMembershipTypePrice;
             }
 
@@ -182,7 +184,7 @@ namespace FitnessClub
                 dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
             }
 
-            else if (strAdditionalFeatures =="")
+            else if (strAdditionalFeatures == "")
             { dblAdditionalPrice = 0; }
 
             strAdditionalPrice = dblAdditionalPrice.ToString("C2");
@@ -215,7 +217,7 @@ namespace FitnessClub
             MembershipSignupWindow.StartDate = strStartDate;
             MembershipSignupWindow.AdditionalFeature = strAdditionalFeatures;
             MembershipSignupWindow.DisplayQuote();
-            
+
             //If it is not displaying should i still include this part?
             MembershipSignupWindow.ExpirationDate = strEndDate;
             MembershipSignupWindow.Subtotal = strMembershipSubtotal;
@@ -233,8 +235,8 @@ namespace FitnessClub
 
         }
 
-   //load MemberPricing from Json Data
-   private List<Pricing> GetDataSetFromFile()
+        //load MemberPricing from Json Data
+        private List<Pricing> GetDataSetFromFile()
         {
             List<Pricing> lstPricing = new List<Pricing>();
             string strFilePath = @"../../../Data/MembershipPricing.json";
