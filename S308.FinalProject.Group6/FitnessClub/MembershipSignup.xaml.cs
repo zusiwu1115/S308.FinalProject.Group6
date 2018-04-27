@@ -31,11 +31,11 @@ namespace FitnessClub
         public string Total { get; set; }
 
         enum TrainingType
-        {
-            Casual = 0,
-            Regular = 1,
-            Intense = 2,
-            Professional = 3
+        {   
+            Casual = 1,
+            Regular = 2,
+            Intense = 3,
+            Professional = 4
         };
 
         //SlideBar Value Declaration
@@ -53,6 +53,8 @@ namespace FitnessClub
         {
             InitializeComponent();
             MemberIndex = GetMemberDataSetFromFile();
+            slbTrainingType.Value = 1;
+            slbOverallHealth.Value = 2;
 
         }
 
@@ -132,14 +134,7 @@ namespace FitnessClub
             { MessageBox.Show("Please enter an Email address."); return; }
             if (strGender == null)
             { MessageBox.Show("Please select a gender."); return; }
-            if (strAge == null)
-            { MessageBox.Show("Please enter an age."); return; }
-            if (strWeight == null)
-            { MessageBox.Show("Please enter a current weight."); return; }
-            if (strWeightLoss == null)
-            { MessageBox.Show("Please enter a targeted strength training weight loss."); return; }
-            if (strWeightManagement == null)
-            { MessageBox.Show("Please enter a targeted weight management."); return; }
+
 
             //Declaration for email and phone validation
             bool bolＰarenthesesLeft, bolDash, bolParenthesesRight, bolEmptySpace;
@@ -230,10 +225,31 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in export process: " + ex.Message);
             }
-            MessageBox.Show("Export Completed!" + Environment.NewLine + strFilePath);
+            MessageBox.Show("Export Completed!" + Environment.NewLine + strFilePath +
+                "First Name: " + strFirstName + Environment.NewLine +
+                "Last Name: " + strLastName + Environment.NewLine +
+                "Credit Card Type: " + strCreditCardType + Environment.NewLine +
+                "Credit Card Number: " + strCardNumber + Environment.NewLine +
+                "Phone: " + strPhone + Environment.NewLine +
+                "Email: " + strEmail + Environment.NewLine +
+                "Gender: " + strGender + Environment.NewLine +
+                "Age: " + strAge + Environment.NewLine +
+                "Weight: " + strWeight + Environment.NewLine +
+                "Training Type: " + strTrainingType + Environment.NewLine +
+                "Overall Health: " + strOverallHealth + Environment.NewLine +
+                "Strength Training Weight Loss: " + strWeightLoss + Environment.NewLine +
+                "Weight Management: " + strWeightLoss + Environment.NewLine +
+                "Membership Type: " + MembershipType + Environment.NewLine +
+                "Start Date: " + StartDate + Environment.NewLine +
+                "End Date: " + ExpirationDate + Environment.NewLine +
+                "SubTotal (Membership Price): " + Subtotal + Environment.NewLine +
+                    "Additional Feature(s): " + AdditionalFeature + Environment.NewLine +
+                    "Total Price: " + Total
+
+                );
         }
 
-       
+
 
 
         private void btnReturnSales_Click(object sender, RoutedEventArgs e)
