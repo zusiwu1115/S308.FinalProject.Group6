@@ -55,7 +55,7 @@ namespace FitnessClub
 
             }
         }
-    
+
 
 
 
@@ -63,8 +63,8 @@ namespace FitnessClub
 
         private void btnQuote_Click(object sender, RoutedEventArgs e)
         {
-       //convert selected items in the input to string
-           // ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
+            //convert selected items in the input to string
+            // ComboBoxItem cbiMembershipType = (ComboBoxItem)cobMembershipType.SelectedItem;
             //ComboBoxItem cbiAdditionalFeatures = (ComboBoxItem)cobAdditionalFeatures.SelectedItem;
             DateTime dtpDatePicked = (DateTime)datStartDate.SelectedDate;
 
@@ -75,10 +75,11 @@ namespace FitnessClub
             //validate inputs of Membership type, startdate and Additional Features
             if (strMembershipType == "")
             { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
-            if (strAdditionalFeatures == "")
-            { MessageBox.Show("Please select a Membership Type from the dropdown List."); return; }
             if (dtpDatePicked < DateTime.Today)
             { MessageBox.Show("Please select a Starting Date Greater than or Equal to Current Date."); return; }
+            if (strAdditionalFeatures == "Please Select")
+            { MessageBox.Show("Please select additional feature(s) from the list."); return; }
+            
 
             //Search Data 
             Pricing MembershipSearch;
@@ -89,6 +90,7 @@ namespace FitnessClub
             AdditionalFeaturesPricing AdditionalFeatureSearch;
             AdditionalFeatureSearch = AdditionalPricingIndex.Where(a => a.MembershipTpe == strAdditionalFeatures).FirstOrDefault();
             double dblAdditionalFeaturesPrice = Convert.ToDouble(AdditionalFeatureSearch.CurrentPrice);
+            
 
             //Change End Date
             DateTime EndDate;
@@ -180,8 +182,8 @@ namespace FitnessClub
                 dblAdditionalPrice = dblAdditionalFeaturesPrice * 12;
             }
 
-            else
-                dblAdditionalPrice = 0;
+            else if (strAdditionalFeatures =="")
+            { dblAdditionalPrice = 0; }
 
             strAdditionalPrice = dblAdditionalPrice.ToString("C2");
 
@@ -226,7 +228,6 @@ namespace FitnessClub
         {
             txtQuoteDisplay.Text = "";
             cobAdditionalFeatures.SelectedIndex = 0;
-            cobMembershipType.SelectedIndex = 0;
             datStartDate.SelectedDate = DateTime.Today;
             btnStartApplication.Visibility = Visibility.Hidden;
 

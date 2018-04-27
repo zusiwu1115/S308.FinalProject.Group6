@@ -14,18 +14,19 @@
                 <ImageBrush ImageSource="Logo.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <GroupBox x:Name="grpSearch" Header="Member Search" HorizontalAlignment="Left" Margin="9,57,0,0" VerticalAlignment="Top" Height="109" Width="472" Foreground="White" FontSize="18.667"/>
-        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="187,88,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label x:Name="lblPhoneNumber" Content="Phone Number" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="20" Margin="82,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Background="#FFEECD86" Foreground="#FF3D3242"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="20" Margin="234,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Background="#FFEECD86" Foreground="#FF3D3242"/>
-        <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="20" Margin="105,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <GroupBox x:Name="grpSearch" Header="Member Search" HorizontalAlignment="Left" Margin="9,57,0,0" VerticalAlignment="Top" Height="109" Width="243" Foreground="White" FontSize="18.667"/>
+        <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Foreground="White" Width="70"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="129,88,0,0" VerticalAlignment="Top" Foreground="White" Width="44"/>
+        <Label x:Name="lblPhoneNumber" Content="Phone Number" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Foreground="White" Width="46"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="20" Margin="80,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="20" Margin="178,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Background="#FFEECD86" Foreground="#FF3D3242"/>
+        <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="20" Margin="58,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Background="#FFEECD86" Foreground="#FF3D3242"/>
         <Label x:Name="lblMemberInfo" Content="Member Information" HorizontalAlignment="Left" Margin="96,6,0,0" VerticalAlignment="Top" Foreground="#FF3D3242" FontSize="13.333" Background="#FFEECD86" FontStyle="Italic"/>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF3D3242" BorderBrush="{x:Null}" Foreground="White" TabIndex="15" Click="btnMainMenu_Click"/>
-        <ListBox x:Name="lstMemberList" HorizontalAlignment="Left" Height="128" Margin="10,197,0,0" VerticalAlignment="Top" Width="472" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lstMemberList_SelectionChanged" Background="#FFEECD86" FontFamily="Cordia New" FontSize="16"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="406,171,0,0" VerticalAlignment="Top" Width="75" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnSearch_Click"/>
-        <Button x:Name="btnDisplayReport" Content="DisplayReport" HorizontalAlignment="Left" Margin="390,340,0,0" VerticalAlignment="Top" Width="91" Foreground="#FF3D3242" Background="#FFEECD86" Click="btnDisplayReport_Click"/>
+        <ListBox x:Name="lstMemberList" HorizontalAlignment="Left" Height="142" Margin="9,208,0,0" VerticalAlignment="Top" Width="243" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="lstMemberList_SelectionChanged" Background="#FFEECD86" FontFamily="Cordia New" FontSize="16"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="177,171,0,0" VerticalAlignment="Top" Width="75" Background="#FFEECD86" Foreground="#FF3D3242" Click="btnSearch_Click"/>
+        <TextBox x:Name="txtReport" HorizontalAlignment="Left" Height="281" Margin="274,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Background="#FFEECD86" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto"/>
+        <Label x:Name="lblNumFound" Content="" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Foreground="White"/>
 
     </Grid>
 </Window>

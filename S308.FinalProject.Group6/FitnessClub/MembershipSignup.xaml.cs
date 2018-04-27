@@ -47,6 +47,8 @@ namespace FitnessClub
             VeryGood = 3,
             Excellent = 4
         };
+
+        string strTrainingType = "";
         public MembershipSignup()
         {
             InitializeComponent();
@@ -89,7 +91,7 @@ namespace FitnessClub
 
             //SlideBar Declaration
             double dblTrainingType = slbTrainingType.Value;
-            string strTrainingType = "";
+
 
             if (dblTrainingType == (double)TrainingType.Casual)
                 strTrainingType = TrainingType.Casual.ToString();
@@ -115,7 +117,76 @@ namespace FitnessClub
                 strOverallHealth = OverallHealth.Excellent.ToString();
 
 
-            //Still need to valid the remaining fields - need work
+            //input validation
+            if(strFirstName == null)
+            { MessageBox.Show("Please enter a first name."); return; }
+            if (strLastName == null)
+            { MessageBox.Show("Please enter a last name."); return; }
+            if (strCreditCardType == null)
+            { MessageBox.Show("Please select a credit card type."); return; }
+            if (strCardNumber == null)
+            { MessageBox.Show("Please enter a credit card number."); return; }
+            if (strPhone == null)
+            { MessageBox.Show("Please enter a phone number."); return; }
+            if (strEmail == null)
+            { MessageBox.Show("Please enter an Email address."); return; }
+            if (strGender == null)
+            { MessageBox.Show("Please select a gender."); return; }
+            if (strAge == null)
+            { MessageBox.Show("Please enter an age."); return; }
+            if (strWeight == null)
+            { MessageBox.Show("Please enter a current weight."); return; }
+            if (strWeightLoss == null)
+            { MessageBox.Show("Please enter a targeted strength training weight loss."); return; }
+            if (strWeightManagement == null)
+            { MessageBox.Show("Please enter a targeted weight management."); return; }
+
+            //Declaration for email and phone validation
+            bool bolＰarenthesesLeft, bolDash, bolParenthesesRight, bolEmptySpace;
+            bool bolAt, bolPeriod;
+            int intAt, intPeriod;
+            string strBeforeAt, strAfterAt, strAfterPeriod;
+
+            //Search character in strPhone
+            bolＰarenthesesLeft = strPhone.Contains("(");
+            bolParenthesesRight = strPhone.Contains(")");
+            bolDash = strPhone.Contains("-");
+            bolEmptySpace = strPhone.Contains(" ");
+
+
+            //valid phone number
+            if (strPhone.Length != 10 || bolDash == true || bolEmptySpace == true || bolParenthesesRight == true || bolＰarenthesesLeft == true)
+            { MessageBox.Show("Please enter your phone number in as 10 digit without any formatting."); return; }
+
+            //Search Character in strEmail
+            bolAt = strEmail.Contains("@");
+            bolPeriod = strEmail.Contains(".");
+
+            //Valid Email to see if there is a @ and .
+            if (bolAt == false || bolPeriod == false)
+            { MessageBox.Show("Please enter a valid email address."); return; }
+
+
+            //Search Character in strEmail
+            intAt = strEmail.IndexOf("@");
+            strBeforeAt = strEmail.Substring(0, intAt);
+            intPeriod = strEmail.IndexOf(".");
+            strAfterAt = strEmail.Substring((intAt + 1), intPeriod - (intAt + 1));
+            strAfterPeriod = strEmail.Substring((intPeriod + 1));
+
+            //Vaild Email to make sure the formating is correct
+            if (intPeriod < intAt)
+            { MessageBox.Show("Please enter a valid email address."); return; }
+            if (strBeforeAt.Length < 1)
+            { MessageBox.Show("Please enter a valid email address."); return; }
+            if (strAfterAt.Length < 1)
+            { MessageBox.Show("Please enter a valid email address."); return; }
+            if (strAfterPeriod.Length < 2)
+            { MessageBox.Show("Please enter a valid email address."); return; }
+
+            //valid credit card number
+
+           
 
 
             //instantiate a new member with user input
@@ -191,6 +262,37 @@ namespace FitnessClub
                 MessageBox.Show("Error loading Members from file: " + ex.Message);
             }
             return lstMembers;
+        }
+
+        private void slbTrainingType_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double dblTrainingType = slbTrainingType.Value;
+
+            if (dblTrainingType == (double)TrainingType.Casual)
+                lblTrainingTypeResult.Content = "Casual Training";
+            else if (dblTrainingType == (double)TrainingType.Regular)
+                lblTrainingTypeResult.Content = "Regular Training";
+            else if (dblTrainingType == (double)TrainingType.Intense)
+                lblTrainingTypeResult.Content = "Intense Training";
+            else if (dblTrainingType == (double)TrainingType.Professional)
+                lblTrainingTypeResult.Content = "Professional Training";
+
+        }
+
+        private void slbOverallHealth_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double dblOverallHealth = slbOverallHealth.Value;
+
+            if (dblOverallHealth == (double)OverallHealth.Poor)
+                lblOverallHealthResult.Content = "Poor";
+            else if (dblOverallHealth == (double)OverallHealth.LessWell)
+                lblOverallHealthResult.Content = "Less Well";
+            else if (dblOverallHealth == (double)OverallHealth.Good)
+                lblOverallHealthResult.Content = "Good";
+            else if (dblOverallHealth == (double)OverallHealth.VeryGood)
+                lblOverallHealthResult.Content = "Very Good";
+            else if (dblOverallHealth == (double)OverallHealth.Excellent)
+                lblOverallHealthResult.Content = "Excellent";
         }
     }
 }
