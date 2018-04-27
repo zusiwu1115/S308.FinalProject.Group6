@@ -85,10 +85,14 @@ namespace FitnessClub
             string strEmail = txtEmail.Text.Trim();
             ComboBoxItem cbiGender = (ComboBoxItem)cobGender.SelectedItem;
             string strGender = cbiGender.Content.ToString();
-            string strAge = txtAge.Text.Trim();
-            string strWeight = txtWeight.Text.Trim();
-            string strWeightLoss = txtWeightLoss.Text.Trim();
-            string strWeightManagement = txtWeightManagement.Text.Trim();
+            int intAge = Convert.ToInt32(txtAge.Text);
+            string strAge = intAge.ToString();
+            double dblWeight = Convert.ToDouble(txtWeight.Text);
+            string strWeight = dblWeight.ToString();
+            double dblWeightLoss = Convert.ToDouble(txtWeightLoss.Text);
+            string strWeightLoss = dblWeightLoss.ToString();
+            double dblWeightManagement = Convert.ToDouble(txtWeightManagement.Text);
+            string strWeightManagement = dblWeightManagement.ToString();
             Members memNew;
 
             //SlideBar Declaration
@@ -134,7 +138,14 @@ namespace FitnessClub
             { MessageBox.Show("Please enter an Email address."); return; }
             if (strGender == null)
             { MessageBox.Show("Please select a gender."); return; }
-
+            if (intAge < 0 || intAge > 130)
+            { MessageBox.Show("Please enter a viald Age range."); return; }
+            if (dblWeight < 0 || dblWeight > 600)
+            { MessageBox.Show("Please enter a viald Weight range."); return; }
+            if (dblWeightLoss < 0 || dblWeight > 250)
+            { MessageBox.Show("Please enter a viald Strength Training Weight Loss range."); return; }
+            if (dblWeightManagement < 0 || dblWeightManagement > 400)
+            { MessageBox.Show("Please enter a viald Weight Management range."); return; }
 
             //Declaration for email and phone validation
             bool bolＰarenthesesLeft, bolDash, bolParenthesesRight, bolEmptySpace;
@@ -225,7 +236,7 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in export process: " + ex.Message);
             }
-            MessageBox.Show("Export Completed!" + Environment.NewLine + strFilePath +
+            MessageBox.Show("Export Completed!" + Environment.NewLine + strFilePath + Environment.NewLine + Environment.NewLine +
                 "First Name: " + strFirstName + Environment.NewLine +
                 "Last Name: " + strLastName + Environment.NewLine +
                 "Credit Card Type: " + strCreditCardType + Environment.NewLine +
